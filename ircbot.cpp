@@ -4,15 +4,15 @@
 #include <cstdio>
 #include <cstring>
 
-#ifndef WIN32
-	#include <winsock2.h>
+#ifdef WIN32
+#include <winsock2.h>
 #else
-	#include <sys/socket.h>
-	#include <sys/types.h>
-	#include <netinet/in.h>
-	#include <arpe/inet.h>
-	#include <netdb.h>
-	#include <unistd.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <unistd.h>
 #endif
 
 using namespace std;
@@ -26,6 +26,9 @@ const char *HOST = "irc.insiderZ.DE";
 #else
 	int sockfd;
 #endif
+
+void irc_connect();
+void irc_disconnect();
 
 void irc_connect(){
 
@@ -56,7 +59,7 @@ void irc_connect(){
 	sockaddr_in sin;
 	memset( (char*)&sin, 0, sizeof(sin) );
 	sin.sin_family = AF_INET;
-	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_lenght );
+	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_length );
 	sin.sin_port = htons(PORT);
 	memset(&(sin.sin_zero), 0, 8*sizeof(char));
 	
