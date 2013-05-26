@@ -22,16 +22,13 @@ const int PORT = 6667;
 const char *HOST = "irc.insiderZ.DE";
 
 #ifdef WIN32
-	SOCKET sockfd;
+SOCKET sockfd;
 #else
-	int sockfd;
+int sockfd;
 #endif
 
-void irc_connect();
-void irc_disconnect();
-
 void irc_connect(){
-
+	
 #ifdef WIN32
 	//Windows-Socket initialisieren
 	WSADATA wsa;
@@ -59,7 +56,7 @@ void irc_connect(){
 	sockaddr_in sin;
 	memset( (char*)&sin, 0, sizeof(sin) );
 	sin.sin_family = AF_INET;
-	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_length );
+	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_lenght );
 	sin.sin_port = htons(PORT);
 	memset(&(sin.sin_zero), 0, 8*sizeof(char));
 	
@@ -81,8 +78,44 @@ void irc_disconnect() {
 #endif
 }
 
+void s2u(const char *msg){ //send to uplink
+	send(sockfd, msg, strlen(msg), 0);
+}
+
+void ping_parse(const string &buffer){
+	size_t pingPos = buffer.find("PING");
+	
+	if (pingPos != string::npos) {
+		string pong("PONG" + buffer.substr(pingPos + 4) + "\r\n");
+		cout << pong;
+		s2u(pong.c_str());
+	}
+}
+
+void irc_parse(string buffer){
+	
+	if (buffer.find("\r\n") == (buffer.length() - 2)) {
+		buffer.erase(buffer.length() - 2);
+		ping_parse(buffer);
+		bot_functions(buffer);
+	}
+}
+
 int main() {
 	irc_connect();
+	
+	for (;;) {
+		char buffer[MAX_LINE+1] = {0};
+		
+		if (recv(sockfd, buffer, MAX_LINE*sizeof(char), 0) < 0) {
+			perror("recv()");
+			irc_disconnect();
+			exit(1);
+		}
+		
+		cout << buffer;
+		irc_parse(buffer);
+	}
 	
 	irc_disconnect();
 	
