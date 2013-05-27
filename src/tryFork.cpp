@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
-
+#include <sstream>
 #ifdef WIN32
 #include <winsock2.h>
 #else
@@ -14,6 +14,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #endif
+
 
 #ifdef WIN32
 SOCKET sockfd;
@@ -47,10 +48,13 @@ int main(){
 			exit(1);
 		}
 		else if(pID == 0){
-				//Child
+			//Child
 			cout << "Call chat with: " << "test " << port << " " << ircName << endl;
 			
-			if(execlp ("./ircbot", "./ircbot", "6667", "irc.europa-irc.de", NULL))
+			ostringstream temp;  //temp as in temporary
+			temp<<port;
+			
+			if(execlp ("./ircbot", "./ircbot", temp.str().c_str(), ircName.c_str(), NULL))
 				perror("execvp()");
 			
 			
@@ -78,6 +82,8 @@ int main(){
 			}		
 		}
 	}
+	
+	while(0<waitpid(pID,NULL,0));	
 	
 	return 0;
 }
