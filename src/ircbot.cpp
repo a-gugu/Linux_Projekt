@@ -18,14 +18,21 @@
 using namespace std;
 
 const unsigned int MAX_LINE = 1024; //Größe des Empfangpuffers
-const int PORT = 6667;
-const char *HOST = "irc.insiderZ.DE";
+const int PORT = 6665;
+const char *HOST = "irc.psinet.com";
 
 #ifdef WIN32
-SOCKET sockfd;
+SOCKET sockfd;        
 #else
 int sockfd;
 #endif
+void irc_connect();
+void irc_disconnect();
+void s2u(const char *msg);
+void ping_parse(const string &buffer);
+void irc_parse(string buffer);
+void irc_identify();
+void bot_functions(const string &buffer);
 
 void irc_connect(){
 	
@@ -56,7 +63,7 @@ void irc_connect(){
 	sockaddr_in sin;
 	memset( (char*)&sin, 0, sizeof(sin) );
 	sin.sin_family = AF_INET;
-	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_lenght );
+	memcpy( (char*)&sin.sin_addr, hp->h_addr, hp->h_length );
 	sin.sin_port = htons(PORT);
 	memset(&(sin.sin_zero), 0, 8*sizeof(char));
 	
@@ -101,8 +108,39 @@ void irc_parse(string buffer){
 	}
 }
 
+void irc_identify(){
+	
+	s2u("NICK Bot\r\n");							//Nickname
+	s2u("USER Bot 0 0 :VellasBot\r\n");				//Userdaten
+	s2u("PRIVMSG NickServ IDENTIFY password\r\n");	//Identifizierung
+	s2u("JOIN #channel\r\n");						//Channel betreten
+	s2u("PRIVMSG #channel :Hello!\r\n");			//Begrüßungsnachricht
+}
+
+void bot_functions(const string &buffer) {
+	
+	/*if (buffer.find("Hallo!") != string::npos) {
+	 s2u(("PRIVMSG #channel :Hallo!\r\n").c_str());
+	 }*/
+	
+	size_t pos = 0;
+	
+	if ((pos = buffer.find(":say ")) != string::npos) {
+		s2u(("PRIVMSG #channel :" + buffer.substr(pos + 5) + "\r\n").c_str());
+	}
+	
+	if (buffer.find(":User!User@User.user.insiderZ.DE") == 0 && buffer.find("exit") != string::npos) {
+		s2u("PRIVMSG #channel :Cya\r\n");
+		irc_disconnect();
+		exit(0);
+	}
+	
+}
+
 int main() {
 	irc_connect();
+	
+	irc_identify();
 	
 	for (;;) {
 		char buffer[MAX_LINE+1] = {0};
