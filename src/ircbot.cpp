@@ -56,10 +56,10 @@ void irc_connect(int port, char* host){
 		irc_disconnect();
 		exit(1);
 	}
-	cout << HOST << ARRAYCOUNT(HOST) << endl;
+		
 	hostent *hp = gethostbyname(HOST);
 	if(!hp){
-		cerr << "gethostbyname()" << "	" << HOST << ARRAYCOUNT(HOST) << endl;
+		cerr << "gethostbyname()" << endl;
 		irc_disconnect();
 		exit(1);
 	}
