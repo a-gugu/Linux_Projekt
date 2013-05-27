@@ -21,6 +21,10 @@ SOCKET sockfd;
 int sockfd;
 #endif
 
+
+#define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
+
+
 using namespace std;
 
 const unsigned int MAX_LINE = 1024;
@@ -39,7 +43,7 @@ void irc_connect(int port, char* host){
 	
 #ifdef WIN32
 	WSADATA wsa;
-	if(WSAStarup(MACKEWORD(2,0),&wsa) != 0)
+	if(WSAStartup(MAKEWORD(2,0),&wsa) != 0)
 		exit(1);
 #endif
 	
@@ -52,10 +56,10 @@ void irc_connect(int port, char* host){
 		irc_disconnect();
 		exit(1);
 	}
-	
+	cout << HOST << ARRAYCOUNT(HOST) << endl;
 	hostent *hp = gethostbyname(HOST);
 	if(!hp){
-		cerr << "gethostbyname()" << endl;
+		cerr << "gethostbyname()" << "	" << HOST << ARRAYCOUNT(HOST) << endl;
 		irc_disconnect();
 		exit(1);
 	}
@@ -89,7 +93,6 @@ void s2u(const char* msg){
 	send(sockfd, msg, strlen(msg), 0);
 }
 
-#define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
 char name[255];
 void irc_identify(){
 	
@@ -158,7 +161,9 @@ int main(int argc, char *argv[]){
         fprintf(stderr,"To less argumentsn");
         exit(1);
     }
-	
+	cout << endl << endl << endl;
+	cout << argv[1] << " " << argv[2];
+	cout << endl << endl << endl;
 	irc_connect(atoi(argv[1]),argv[2]);//"irc.europa-irc.de"
 	
 	irc_identify();
