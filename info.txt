@@ -1,0 +1,2 @@
+port: 6667
+irc server: irc.europa-irc.de
