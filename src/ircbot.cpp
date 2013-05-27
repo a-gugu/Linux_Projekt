@@ -89,9 +89,20 @@ void s2u(const char* msg){
 	send(sockfd, msg, strlen(msg), 0);
 }
 
+#define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
+char name[255];
 void irc_identify(){
 	
-	s2u("NICK Frosch78\r\n");
+	printf("\n\tSay my name, say my name\n\tIf no one is around you \n\tSay baby I love you \n\tIf you ain't runnin' game \n");
+	
+	string message = "NICK ";
+	string input;
+	
+	cin >> input;
+	sleep(1);
+	s2u((message + input + "\r\n").c_str());
+	
+	//s2u("NICK Frosch 78\r\n");
 	
 	s2u("USER Frosch78 0 0 :Frosch78\r\n");
 	
@@ -144,10 +155,9 @@ void irc_parse(string buffer){
 int main(int argc, char *argv[]){
 	
 	if (argc < 2) {
-        fprintf(stderr,"ERROR, no port provided\n");
+        fprintf(stderr,"To less argumentsn");
         exit(1);
     }
-	
 	
 	irc_connect(atoi(argv[1]),argv[2]);//"irc.europa-irc.de"
 	
