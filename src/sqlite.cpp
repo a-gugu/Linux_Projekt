@@ -18,6 +18,8 @@
 
 #include <sqlite3.h>
 
+using namespace std;
+
 #ifdef WIN32
 	SOCKET sockfd;
 #else
@@ -28,10 +30,10 @@
 sqlite3 *sqlitedb = NULL;
 
 struct _BotParams {
-	char* server, *port, *nick;
+	string server, port, nick, channel;
 } BotParams;
 
-using namespace std;
+
 
 int sqlite_getdatabase();
 
@@ -49,6 +51,7 @@ int main(){
 		cout << "sqlite3_open()";
 		exit(1);
 	}
+	
 	if(!sqlite_getdatabase())
 		cout << "sqlite_getdatabase" << endl;
 	
@@ -63,8 +66,8 @@ int main(){
 			//Child
 			//cout << "Server: " << BotParams.server << "	" << "Port: " << BotParams.port << "	" << "Nick: " << BotParams.nick << endl;
 //++++BUG Begin+++++
-			//if(execlp ("./ircbot", "./ircbot", BotParams.port, BotParams.server, NULL))
-			if(execlp ("./ircbot", "./ircbot", "6667", "irc.europa-irc.de", NULL))
+			if(execlp ("./ircbot", "./ircbot", BotParams.port.c_str(), BotParams.server.c_str(), NULL))
+			//if(execlp ("./ircbot", "./ircbot", "6667", "irc.europa-irc.de", NULL))
 				perror("execvp()");
 //++++BUG End+++++			
 			
@@ -103,13 +106,21 @@ int sqlite_getdatabase(){
 	sqlite3_stmt *vm;
 	sqlite3_prepare(sqlitedb, "SELECT * FROM logginlist", -1, &vm, NULL);
 	
-	cout << "Print datas" << endl;
 	while (sqlite3_step(vm) != SQLITE_DONE) {
-		char tmp[1200];
-		sprintf(tmp, "%s (%d - %s - %s)", sqlite3_column_text(vm, 1), sqlite3_column_int(vm, 2), sqlite3_column_text(vm, 3), sqlite3_column_text(vm, 4));
-		cout << sqlite3_column_text(vm, 1) << endl;
+		BotParams.server = (char*)sqlite3_column_text(vm, 1);
+	
+		stringstream ss;
+		ss << sqlite3_column_int(vm, 2);
+		
+		BotParams.port = ss.str();
+		
+		BotParams.channel = (char*)sqlite3_column_text(vm, 3);
+		
+		BotParams.nick = (char*)sqlite3_column_text(vm, 4);
 	}
-	cout << "End printing datas" << endl;
+	
+	//cout << BotParams.server << BotParams.port << BotParams.channel << BotParams.nick;
+	
 	sqlite3_finalize(vm);
 	
 	return 1;
