@@ -41,8 +41,8 @@ int sqlite_getdatabase();
 
 int main(){
 	
-	pid_t pID;
-	
+	pid_t pID[10];
+	int indexPID = 0;
 	int chat = 1;
 	
 	cout << "Hi, welcome" << endl;
@@ -55,27 +55,24 @@ int main(){
 	if(!sqlite_getdatabase())
 		cout << "sqlite_getdatabase" << endl;
 	
-	while (chat > 0) {
-		
-		pID = fork();
-		if (pID < 0) {
+	while (chat > 0 && indexPID < 10) {
+
+		pID[indexPID] = fork();
+		if (pID[indexPID] < 0) {
 			cerr << "Failed to fork" << endl;
 			exit(1);
 		}
-		else if(pID == 0){
+		else if(pID[indexPID] == 0){
 			//Child
-			//cout << "Server: " << BotParams.server << "	" << "Port: " << BotParams.port << "	" << "Nick: " << BotParams.nick << endl;
-//++++BUG Begin+++++
 			if(execlp ("./ircbot", "./ircbot", BotParams.port.c_str(), BotParams.server.c_str(), NULL))
-			//if(execlp ("./ircbot", "./ircbot", "6667", "irc.europa-irc.de", NULL))
-				perror("execvp()");
-//++++BUG End+++++			
+					perror("execvp()");			
 			
 			cout << "Should not show this";
 			chat = 0;
 		}
 		else {
 			//parent
+			indexPID++;
 			while (chat > 0) {
 				sleep(1);
 				cout << "Start another chat ( Y / N )?" << endl;
@@ -96,8 +93,12 @@ int main(){
 		}
 	}
 	sqlite3_close(sqlitedb);
-	while(0<waitpid(pID,NULL,0));	
 	
+	for (; indexPID > 0; --indexPID){	
+		cout << indexPID << endl;
+		while(0<waitpid(pID[indexPID],NULL,0));	
+	
+	}
 	return 0;
 }
 

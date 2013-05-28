@@ -23,13 +23,13 @@ int sockfd;
 
 
 #define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
-
+#define logFilePath "./logFile.xml"
 
 using namespace std;
 
 const unsigned int MAX_LINE = 1024;
 
-void irc_connect();
+void irc_connect(int port, char* host);
 void irc_disconnect();
 void irc_identify();
 void irc_parse(string buffer);
@@ -37,6 +37,42 @@ void irc_parse(string buffer);
 void s2u(const char* msg);
 void ping_parse(const string &buffer);
 void bot_functions(const string &buffer);
+
+int loadAndSendToUplinkConfigFile();
+
+int main(int argc, char *argv[]){
+	
+	if (argc < 2) {
+        fprintf(stderr,"To less argumentsn");
+        exit(1);
+    }
+	
+	irc_connect(atoi(argv[1]),argv[2]);//"irc.europa-irc.de"
+	
+	irc_identify();
+	
+		
+	for (;;) {
+		char buffer[MAX_LINE +1] = {0};
+		
+		if(recv(sockfd, buffer, MAX_LINE * sizeof(char), 0) < 0) {
+			perror("recv");
+			irc_disconnect();
+			exit(1);
+		}
+		
+		cout << buffer;
+		
+		if(loadAndSendToUplinkConfigFile() < 0)
+			printf("Fail to load config file\n");
+		
+		irc_parse(buffer);
+	}
+	
+	irc_disconnect();
+	
+	return 0;
+}
 
 
 void irc_connect(int port, char* host){
@@ -56,7 +92,7 @@ void irc_connect(int port, char* host){
 		irc_disconnect();
 		exit(1);
 	}
-		
+	
 	hostent *hp = gethostbyname(HOST);
 	if(!hp){
 		cerr << "gethostbyname()" << endl;
@@ -96,16 +132,17 @@ void s2u(const char* msg){
 char name[255];
 void irc_identify(){
 	
-	printf("\n\tSay my name, say my name\n\tIf no one is around you \n\tSay baby I love you \n\tIf you ain't runnin' game \n");
+	/*	printf("\n\tSay my name, say my name\n\tIf no one is around you \n\tSay baby I love you \n\tIf you ain't runnin' game \n");
+	 
+	 string message = "NICK ";
+	 string input;
+	 
+	 cin >> input;
+	 sleep(1);
+	 s2u((message + input + "\r\n").c_str());
+	 */
 	
-	string message = "NICK ";
-	string input;
-	
-	cin >> input;
-	sleep(1);
-	s2u((message + input + "\r\n").c_str());
-	
-	//s2u("NICK Frosch 78\r\n");
+	s2u("NICK Frosch 78\r\n");
 	
 	s2u("USER Frosch78 0 0 :Frosch78\r\n");
 	
@@ -155,34 +192,27 @@ void irc_parse(string buffer){
 	
 }
 
-int main(int argc, char *argv[]){
+int loadAndSendToUplinkConfigFile(){
 	
-	if (argc < 2) {
-        fprintf(stderr,"To less argumentsn");
-        exit(1);
-    }
-	cout << endl << endl << endl;
-	cout << argv[1] << " " << argv[2];
-	cout << endl << endl << endl;
-	irc_connect(atoi(argv[1]),argv[2]);//"irc.europa-irc.de"
+	printf("Load config file\n");
 	
-	irc_identify();
+	FILE *configFile = fopen(logFilePath, "r");
 	
-	for (;;) {
-		char buffer[MAX_LINE +1] = {0};
-		
-		if(recv(sockfd, buffer, MAX_LINE * sizeof(char), 0) < 0) {
-			perror("recv");
-			irc_disconnect();
-			exit(1);
-		}
-		
-		cout << buffer;
-		
-		irc_parse(buffer);
+	if (configFile == NULL) {
+		printf("File not found!");
+		fclose(configFile);
+		return 0;
 	}
 	
-	irc_disconnect();
+	char configLine[100];
+	while (fgets(configLine, 100, configFile) != NULL) {
+		string tmp = configLine;
+		tmp+= "\r\n";
+		s2u(tmp.c_str());
+	}
 	
-	return 0;
+	fclose(configFile);
+	
+	return 1;
 }
+
