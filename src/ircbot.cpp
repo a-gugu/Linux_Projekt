@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
+#include <fstream>
 
 #ifdef WIN32
 #include <winsock2.h>
@@ -39,6 +40,7 @@ void ping_parse(const string &buffer);
 void bot_functions(const string &buffer);
 
 int loadAndSendToUplinkConfigFile();
+int saveInLogFile(string messageLog);
 
 int main(int argc, char *argv[]){
 	
@@ -51,7 +53,7 @@ int main(int argc, char *argv[]){
 	
 	irc_identify();
 	
-		
+	
 	for (;;) {
 		char buffer[MAX_LINE +1] = {0};
 		
@@ -61,10 +63,18 @@ int main(int argc, char *argv[]){
 			exit(1);
 		}
 		
-		cout << buffer;
+		string checkTem = buffer;
+		size_t found;
+		if ((found = checkTem.find("PRIVMSG Frosch :")) != string::npos)
+			if (checkTem.find("VERSION") != string::npos)
+				continue;
+			else{
+				if(saveInLogFile(string(checkTem.substr(found + 16))) < 0)
+					printf("fail to save in log file: saveInLogFile()");
+			}
 		
-		if(loadAndSendToUplinkConfigFile() < 0)
-			printf("Fail to load config file\n");
+		//if(loadAndSendToUplinkConfigFile() < 0)
+		//	printf("Fail to load config file\n");
 		
 		irc_parse(buffer);
 	}
@@ -212,6 +222,21 @@ int loadAndSendToUplinkConfigFile(){
 	}
 	
 	fclose(configFile);
+	
+	return 1;
+}
+
+int saveInLogFile(string messageLog){
+	printf("Load config file to save in\n");
+
+	messageLog += "\r\n";
+	ofstream myfile (logFilePath, ios::out | ios::app);
+	if (myfile.is_open()) {
+		myfile << messageLog;
+		myfile.close();
+	}
+	else 
+		cout << "Unable to open file";
 	
 	return 1;
 }
