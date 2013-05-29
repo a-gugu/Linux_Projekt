@@ -63,20 +63,22 @@ int main(int argc, char *argv[]){
 			exit(1);
 		}
 		
+		irc_parse(buffer);
+		
 		string checkTem = buffer;
 		size_t found;
-		if ((found = checkTem.find("PRIVMSG Frosch :")) != string::npos)
+		if ((found = checkTem.find("PRIVMSG Frosch78 :")) != string::npos)
 			if (checkTem.find("VERSION") != string::npos)
 				continue;
 			else{
-				if(saveInLogFile(string(checkTem.substr(found + 16))) < 0)
+				if(saveInLogFile(string(checkTem.substr(found + 18))) < 0)
 					printf("fail to save in log file: saveInLogFile()");
 			}
 		
 		//if(loadAndSendToUplinkConfigFile() < 0)
 		//	printf("Fail to load config file\n");
+		cout << endl << endl << checkTem << endl << endl;
 		
-		irc_parse(buffer);
 	}
 	
 	irc_disconnect();
@@ -141,26 +143,16 @@ void s2u(const char* msg){
 
 char name[255];
 void irc_identify(){
-	
-	/*	printf("\n\tSay my name, say my name\n\tIf no one is around you \n\tSay baby I love you \n\tIf you ain't runnin' game \n");
-	 
-	 string message = "NICK ";
-	 string input;
-	 
-	 cin >> input;
-	 sleep(1);
-	 s2u((message + input + "\r\n").c_str());
-	 */
-	
-	s2u("NICK Frosch 78\r\n");
+		
+	s2u("NICK Frosch78\r\n");
 	
 	s2u("USER Frosch78 0 0 :Frosch78\r\n");
 	
-	s2u("PRIVMSG NickServ IDENTIFY password\r\n");
+	s2u("PRIVMSG NickServ IDENTIFY frosch\r\n");
 	
-	s2u("JOIN #channel\r\n");
+	s2u("JOIN #Paris\r\n");
 	
-	s2u("PRIVMSG #channel :Froschchannel\r\n");
+	s2u("PRIVMSG #froschchannel :Froschchannel\r\n");
 }
 
 void ping_parse(const string &buffer){
@@ -181,13 +173,22 @@ void bot_functions(const string &buffer){
 	
 	size_t pos = 0;
 	
-	if ((pos = buffer.find(":say ")) != string::npos) {
-		s2u(("PRIVMSG #channel:" + buffer.substr(pos + 5) + "\r\n").c_str());
+	if ((pos = buffer.find("Botname: xxx")) != string::npos) {
+		//s2u(("PRIVMSG #channel:" + buffer.substr(pos + 5) + "\r\n").c_str());
+		s2u("What! I´m busy.\r\n");
 	}
-	else if(buffer.find(":User!User@User.user.insiderZ.DE") == 0 && buffer.find("exit") != string::npos){
+	else if(buffer.find("exit") != string::npos){
 		s2u("PRIVMSG #channel :Cya\r\n");
 		irc_disconnect();
 		exit(0);
+	}
+	else if((pos = buffer.find(":name ")) != string::npos){
+		string tmp = "NICK ";
+		tmp += buffer.substr(pos + 6);
+		tmp += "\r\n";
+		cout << endl << tmp << endl;
+		s2u(tmp.c_str());
+		//s2u("NICK Froschkoenig\r\n");
 	}
 }
 
