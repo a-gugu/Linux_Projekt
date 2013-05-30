@@ -174,8 +174,10 @@ void bot_functions(const string &buffer){
 	size_t pos = 0;
 	
 	if ((pos = buffer.find("Botname: xxx")) != string::npos) {
-		//s2u(("PRIVMSG #channel:" + buffer.substr(pos + 5) + "\r\n").c_str());
-		s2u("What! I´m busy.\r\n");
+		string tmp(	"PRIVMSG " + 
+					buffer.substr((buffer.find(":")+1),(buffer.find("!")-1)) + 
+					" What! I´m busy.\r\n");
+		s2u(tmp.c_str());
 	}
 	else if(buffer.find("exit") != string::npos){
 		s2u("PRIVMSG #channel :Cya\r\n");
@@ -183,10 +185,7 @@ void bot_functions(const string &buffer){
 		exit(0);
 	}
 	else if((pos = buffer.find(":name ")) != string::npos){
-		string tmp = "NICK ";
-		tmp += buffer.substr(pos + 6);
-		tmp += "\r\n";
-		cout << endl << tmp << endl;
+		string tmp = "NICK " + buffer.substr(pos + 6) + "\r\n";
 		s2u(tmp.c_str());
 		//s2u("NICK Froschkoenig\r\n");
 	}
