@@ -16,6 +16,8 @@
 #include <unistd.h>
 #endif
 
+#include <sqlite3.h>
+
 #ifdef WIN32
 SOCKET sockfd;
 #else
@@ -24,11 +26,15 @@ int sockfd;
 
 
 #define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
-#define logFilePath "./logFile.xml"
+
+#define logFilePath "logFile.sqlite"
+sqlite3 *sqlitedb = NULL;
 
 using namespace std;
 
 const unsigned int MAX_LINE = 1024;
+
+unsigned int saveLog = 0;
 
 void irc_connect(int port, char* host);
 void irc_disconnect();
@@ -42,6 +48,11 @@ void bot_functions(const string &buffer);
 int loadAndSendToUplinkConfigFile();
 int saveInLogFile(string messageLog);
 
+
+void sql_createtables();
+void sql_addchat(const char name[],const char channel[],const char chat[]);
+void sql_getchat();
+
 int main(int argc, char *argv[]){
 	
 	if (argc < 2) {
@@ -49,10 +60,12 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 	
-	irc_connect(atoi(argv[1]),argv[2]);//"irc.europa-irc.de"
+	irc_connect(atoi(argv[1]),argv[2]);
 	
 	irc_identify();
 	
+	sqlite3_open(logFilePath, &sqlitedb);
+	sql_createtables();
 	
 	for (;;) {
 		char buffer[MAX_LINE +1] = {0};
@@ -64,26 +77,65 @@ int main(int argc, char *argv[]){
 		}
 		
 		irc_parse(buffer);
-		
-		string checkTem = buffer;
-		size_t found;
-		if ((found = checkTem.find("PRIVMSG Frosch78 :")) != string::npos)
-			if (checkTem.find("VERSION") != string::npos)
-				continue;
-			else{
-				if(saveInLogFile(string(checkTem.substr(found + 18))) < 0)
-					printf("fail to save in log file: saveInLogFile()");
-			}
-		
-		//if(loadAndSendToUplinkConfigFile() < 0)
-		//	printf("Fail to load config file\n");
-		cout << endl << endl << checkTem << endl << endl;
+		string tm = buffer;
+		string name(tm.substr(tm.find(":")+1, tm.find("!") -1));
+		cout << endl << "Name " << name << endl;
+		string msg(tm.substr(tm.find(" :")+2,tm.length()-1));
+		cout << endl << "Message " << msg << endl;
+		if (saveLog) {
+			//save data in sqlite
+			size_t pos;
+			/*if (buffer.find("PRIVMSG ") != string::npos) {
+				string name(buffer.substr(buffer.find(":")+1, buffer.find("!")));
+				
+				if(size_t tmPos = buffer.find(" :") != string::npos) {
+					string tm = buffer.substr(pos,tmPos);
+				}
+				else {
+					cout << endl << "---- 90 ----" << endl;
+				}
+
+			}*/
+		}
 		
 	}
-	
+	sqlite3_close(sqlitedb);
 	irc_disconnect();
 	
 	return 0;
+}
+
+
+void sql_createtables()
+{
+	sqlite3_exec(sqlitedb, "CREATE TABLE chat (id integer primary key, nick text, channel text,  chat text);", NULL, NULL, NULL);
+}
+
+void sql_addchat(const char name[],const char channel[],const char chat[])
+{
+	char tmp[1200];
+	sprintf(tmp,"INSERT INTO chat (nick,channel, chat) VALUES ('%s', '%s', '%s');",name,channel,chat);
+	sqlite3_exec(sqlitedb, tmp, NULL, NULL, NULL);
+}
+
+void sql_getchat()
+{
+	sqlite3_stmt *vm;
+	sqlite3_prepare(sqlitedb, "SELECT * FROM chat", -1, &vm, NULL);
+	
+	printf("ID:\tnick\tchannel\tchat\n");
+	
+	while (sqlite3_step(vm) != SQLITE_DONE)
+	{
+		printf("%i\t%s\t%s\t%s\n", 
+			   sqlite3_column_int(vm, 0), 
+			   sqlite3_column_text(vm, 1),
+			   sqlite3_column_text(vm, 2),
+			   sqlite3_column_text(vm, 3)
+			   );
+	}
+	sqlite3_finalize(vm);
+	
 }
 
 
@@ -148,11 +200,11 @@ void irc_identify(){
 	
 	s2u("USER Frosch78 0 0 :Frosch78\r\n");
 	
-	s2u("PRIVMSG NickServ IDENTIFY frosch\r\n");
+	s2u("PRIVMSG NickServ REGISTER Butter\r\n");
 	
 	s2u("JOIN #Paris\r\n");
 	
-	s2u("PRIVMSG #froschchannel :Froschchannel\r\n");
+	s2u("Servus Leut´z\r\n");
 }
 
 void ping_parse(const string &buffer){
@@ -187,8 +239,15 @@ void bot_functions(const string &buffer){
 	else if((pos = buffer.find(":name ")) != string::npos){
 		string tmp = "NICK " + buffer.substr(pos + 6) + "\r\n";
 		s2u(tmp.c_str());
-		//s2u("NICK Froschkoenig\r\n");
 	}
+	
+	else if ((pos = buffer.find(":savestart")) != string::npos){
+		saveLog = 1;
+	}
+	else if ((pos = buffer.find(":savestop")) != string::npos){
+		saveLog = 0;
+	}
+		
 }
 
 void irc_parse(string buffer){
@@ -203,8 +262,6 @@ void irc_parse(string buffer){
 }
 
 int loadAndSendToUplinkConfigFile(){
-	
-	printf("Load config file\n");
 	
 	FILE *configFile = fopen(logFilePath, "r");
 	
@@ -227,7 +284,6 @@ int loadAndSendToUplinkConfigFile(){
 }
 
 int saveInLogFile(string messageLog){
-	printf("Load config file to save in\n");
 
 	messageLog += "\r\n";
 	ofstream myfile (logFilePath, ios::out | ios::app);
@@ -235,8 +291,10 @@ int saveInLogFile(string messageLog){
 		myfile << messageLog;
 		myfile.close();
 	}
-	else 
+	else {
 		cout << "Unable to open file";
+		return 0;
+	}
 	
 	return 1;
 }
