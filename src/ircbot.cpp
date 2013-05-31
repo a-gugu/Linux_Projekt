@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <cstring>
 #include <fstream>
+#include <sstream>
 
 #ifdef WIN32
 #include <winsock2.h>
@@ -27,7 +28,7 @@ int sockfd;
 
 #define ARRAYCOUNT(a) (sizeof a / sizeof a[0])
 
-#define logFilePath "logFile.sqlite"
+#define logFilePath "log.sqlite"
 sqlite3 *sqlitedb = NULL;
 
 using namespace std;
@@ -50,7 +51,8 @@ int saveInLogFile(string messageLog);
 
 
 void sql_createtables();
-void sql_addchat(const char name[],const char channel[],const char chat[]);
+void sql_addchat(const char name[],const char channel[],const char chat[], const char date[]);
+void sql_addchat(string name,string channel,string chat,string date);
 void sql_getchat();
 
 int main(int argc, char *argv[]){
@@ -67,6 +69,11 @@ int main(int argc, char *argv[]){
 	sqlite3_open(logFilePath, &sqlitedb);
 	sql_createtables();
 	
+	time_t now = time(0);
+	
+	
+	
+	
 	for (;;) {
 		char buffer[MAX_LINE +1] = {0};
 		
@@ -76,26 +83,31 @@ int main(int argc, char *argv[]){
 			exit(1);
 		}
 		
+		string n = buffer;
+		cout << endl<< endl<<  endl<< endl<< n << endl;
 		irc_parse(buffer);
-		string tm = buffer;
-		string name(tm.substr(tm.find(":")+1, tm.find("!") -1));
-		cout << endl << "Name " << name << endl;
-		string msg(tm.substr(tm.find(" :")+2,tm.length()-1));
-		cout << endl << "Message " << msg << endl;
+		
+		
 		if (saveLog) {
 			//save data in sqlite
-			size_t pos;
-			/*if (buffer.find("PRIVMSG ") != string::npos) {
-				string name(buffer.substr(buffer.find(":")+1, buffer.find("!")));
-				
-				if(size_t tmPos = buffer.find(" :") != string::npos) {
-					string tm = buffer.substr(pos,tmPos);
-				}
-				else {
-					cout << endl << "---- 90 ----" << endl;
-				}
+			
+			time(&now);
+			tm* localtm = localtime(&now);
+			
+			stringstream t;
+			t	<< localtm->tm_year+1900 << "-" << localtm->tm_mon << "-" << localtm->tm_mday << " " 
+				<< localtm->tm_hour << ":" << localtm->tm_min << ":" << localtm->tm_sec;
 
-			}*/
+			string tm = buffer;
+			string name(tm.substr(tm.find(":")+1, tm.find("!") -1));
+			string msg(tm.substr(tm.find(" :")+2,tm.length()-1));
+			string channel(tm.substr(tm.find("@")+1,tm.find("-")-1));
+			sql_addchat(name, channel,msg, t.str());
+			cout << name << " ? " << channel << " ? " << msg << " ? " << t.str() << endl;
+			if (tm.find("print") != string::npos) {
+				sql_getchat();
+				cout << "Print" << endl;
+			}
 		}
 		
 	}
@@ -108,31 +120,45 @@ int main(int argc, char *argv[]){
 
 void sql_createtables()
 {
-	sqlite3_exec(sqlitedb, "CREATE TABLE chat (id integer primary key, nick text, channel text,  chat text);", NULL, NULL, NULL);
+	if(sqlite3_exec(sqlitedb, 
+					"CREATE TABLE chat (id integer primary key, nick text, channel text,  chat text, date text);", 
+					NULL, NULL, NULL)
+						!= 0)
+		cout << "sqlite3_exec(create table)";
+	
 }
 
-void sql_addchat(const char name[],const char channel[],const char chat[])
+void sql_addchat(const char name[],const char channel[],const char chat[], const char date[])
 {
 	char tmp[1200];
-	sprintf(tmp,"INSERT INTO chat (nick,channel, chat) VALUES ('%s', '%s', '%s');",name,channel,chat);
+	sprintf(tmp,"INSERT INTO chat (nick,channel, chat, date) VALUES ('%s', '%s', '%s', '&s');",name,channel,chat, date);
 	sqlite3_exec(sqlitedb, tmp, NULL, NULL, NULL);
+}
+
+void sql_addchat(string name,string channel,string chat,string date)
+{
+	
+	string tmp("INSERT INTO chat (nick,channel,chat,date) VALUES (" + name + ","+ channel + ","+ chat + ","+ date + ");");
+	cout << "sql_addchat" << endl;
+	cout << tmp << endl;
+	//sqlite3_exec(sqlitedb, tmp.c_str(), NULL, NULL, NULL);
 }
 
 void sql_getchat()
 {
+	
 	sqlite3_stmt *vm;
 	sqlite3_prepare(sqlitedb, "SELECT * FROM chat", -1, &vm, NULL);
-	
-	printf("ID:\tnick\tchannel\tchat\n");
-	
+	stringstream ss;
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
-		printf("%i\t%s\t%s\t%s\n", 
-			   sqlite3_column_int(vm, 0), 
-			   sqlite3_column_text(vm, 1),
-			   sqlite3_column_text(vm, 2),
-			   sqlite3_column_text(vm, 3)
-			   );
+		
+		ss << (char*)sqlite3_column_text(vm, 1) << "	"
+			 << (char*)sqlite3_column_text(vm, 2) << "	"
+			 << (char*)sqlite3_column_text(vm, 3) << "	"
+		<< (char*)sqlite3_column_text(vm, 4);
+		
+		cout << ss.str() << endl << endl << endl;
 	}
 	sqlite3_finalize(vm);
 	
@@ -195,7 +221,7 @@ void s2u(const char* msg){
 
 char name[255];
 void irc_identify(){
-		
+	
 	s2u("NICK Frosch78\r\n");
 	
 	s2u("USER Frosch78 0 0 :Frosch78\r\n");
@@ -227,8 +253,8 @@ void bot_functions(const string &buffer){
 	
 	if ((pos = buffer.find("Botname: xxx")) != string::npos) {
 		string tmp(	"PRIVMSG " + 
-					buffer.substr((buffer.find(":")+1),(buffer.find("!")-1)) + 
-					" What! I´m busy.\r\n");
+				   buffer.substr((buffer.find(":")+1),(buffer.find("!")-1)) + 
+				   " What! I´m busy.\r\n");
 		s2u(tmp.c_str());
 	}
 	else if(buffer.find("exit") != string::npos){
@@ -247,7 +273,7 @@ void bot_functions(const string &buffer){
 	else if ((pos = buffer.find(":savestop")) != string::npos){
 		saveLog = 0;
 	}
-		
+	
 }
 
 void irc_parse(string buffer){
@@ -284,7 +310,7 @@ int loadAndSendToUplinkConfigFile(){
 }
 
 int saveInLogFile(string messageLog){
-
+	
 	messageLog += "\r\n";
 	ofstream myfile (logFilePath, ios::out | ios::app);
 	if (myfile.is_open()) {
