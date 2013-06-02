@@ -1,0 +1,66 @@
+.TH "src/irc_sqlite3.h" 3 "Sun Jun 2 2013" "'IRC Bot'" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/irc_sqlite3.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsql_init\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_close\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_createtables\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_delete\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_addchat\fP (const char name[], const char channel[], const char chat[], const char date[])"
+.br
+.ti -1c
+.RI "void \fBsql_lastseen\fP (const char name[])"
+.br
+.ti -1c
+.RI "void \fBsql_getchat\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void sql_addchat (const charname[], const charchannel[], const charchat[], const chardate[])"
+
+.PP
+Definition at line 38 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_close ()"
+
+.PP
+Definition at line 29 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_createtables ()"
+
+.PP
+Definition at line 32 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_delete ()"
+
+.PP
+Definition at line 35 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_getchat ()"
+
+.PP
+Definition at line 60 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_init ()"
+
+.PP
+Definition at line 23 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_lastseen (const charname[])"
+
+.PP
+Definition at line 43 of file irc_sqlite3\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'IRC Bot' from the source code\&.

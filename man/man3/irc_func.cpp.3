@@ -1,0 +1,146 @@
+.TH "src/irc_func.cpp" 3 "Sun Jun 2 2013" "'IRC Bot'" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/irc_func.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <sqlite3\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'irc_func\&.h'\fP
+.br
+\fC#include 'irc_sqlite3\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBirc_func_cpp__\fP"
+.br
+.ti -1c
+.RI "#define \fBMAX_LINE\fP   1024"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBirc_connect\fP (int port, char *host)"
+.br
+.ti -1c
+.RI "void \fBirc_disconnect\fP ()"
+.br
+.ti -1c
+.RI "void \fBirc_identify\fP ()"
+.br
+.ti -1c
+.RI "void \fBirc_receive\fP ()"
+.br
+.ti -1c
+.RI "void \fBping_parse\fP (const string &buffer)"
+.br
+.ti -1c
+.RI "void \fBbot_functions\fP (const string &buffer)"
+.br
+.ti -1c
+.RI "void \fBs2u\fP (const char *msg)"
+.br
+.ti -1c
+.RI "void \fBirc_parse\fP (string buffer)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBsockfd\fP"
+.br
+.ti -1c
+.RI "int \fBsaveLog\fP =0"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define irc_func_cpp__"
+
+.PP
+Definition at line 2 of file irc_func\&.cpp\&.
+.SS "#define MAX_LINE   1024"
+
+.PP
+Definition at line 36 of file irc_func\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void bot_functions (const string &buffer)"
+
+.PP
+Definition at line 133 of file irc_func\&.cpp\&.
+.SS "void irc_connect (intport, char *host)"
+
+.PP
+Definition at line 40 of file irc_func\&.cpp\&.
+.SS "void irc_disconnect ()"
+
+.PP
+Definition at line 79 of file irc_func\&.cpp\&.
+.SS "void irc_identify ()"
+
+.PP
+Definition at line 90 of file irc_func\&.cpp\&.
+.SS "void irc_parse (stringbuffer)"
+
+.PP
+Definition at line 193 of file irc_func\&.cpp\&.
+.SS "void irc_receive ()"
+
+.PP
+Definition at line 103 of file irc_func\&.cpp\&.
+.SS "void ping_parse (const string &buffer)"
+
+.PP
+Definition at line 119 of file irc_func\&.cpp\&.
+.SS "void s2u (const char *msg)"
+
+.PP
+Definition at line 191 of file irc_func\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int saveLog =0"
+
+.PP
+Definition at line 38 of file irc_func\&.cpp\&.
+.SS "int sockfd"
+
+.PP
+Definition at line 28 of file irc_func\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'IRC Bot' from the source code\&.

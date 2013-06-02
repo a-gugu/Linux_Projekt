@@ -1,0 +1,70 @@
+.TH "src/irc_func.h" 3 "Sun Jun 2 2013" "'IRC Bot'" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/irc_func.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBirc_connect\fP (int port, char *host)"
+.br
+.ti -1c
+.RI "void \fBirc_disconnect\fP ()"
+.br
+.ti -1c
+.RI "void \fBirc_identify\fP ()"
+.br
+.ti -1c
+.RI "void \fBirc_parse\fP (std::string buffer)"
+.br
+.ti -1c
+.RI "void \fBirc_receive\fP ()"
+.br
+.ti -1c
+.RI "void \fBs2u\fP (const char *msg)"
+.br
+.ti -1c
+.RI "void \fBping_parse\fP (const std::string &buffer)"
+.br
+.ti -1c
+.RI "void \fBbot_functions\fP (const std::string &buffer)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void bot_functions (const std::string &buffer)"
+
+.SS "void irc_connect (intport, char *host)"
+
+.PP
+Definition at line 40 of file irc_func\&.cpp\&.
+.SS "void irc_disconnect ()"
+
+.PP
+Definition at line 79 of file irc_func\&.cpp\&.
+.SS "void irc_identify ()"
+
+.PP
+Definition at line 90 of file irc_func\&.cpp\&.
+.SS "void irc_parse (std::stringbuffer)"
+
+.SS "void irc_receive ()"
+
+.PP
+Definition at line 103 of file irc_func\&.cpp\&.
+.SS "void ping_parse (const std::string &buffer)"
+
+.SS "void s2u (const char *msg)"
+
+.PP
+Definition at line 191 of file irc_func\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'IRC Bot' from the source code\&.

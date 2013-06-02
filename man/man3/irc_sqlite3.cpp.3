@@ -1,0 +1,118 @@
+.TH "src/irc_sqlite3.cpp" 3 "Sun Jun 2 2013" "'IRC Bot'" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/irc_sqlite3.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <sqlite3\&.h>\fP
+.br
+\fC#include 'irc_sqlite3\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBirc_sqlite3_cpp__\fP"
+.br
+.ti -1c
+.RI "#define \fBsqlite3Path\fP   'log\&.sqlite3'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsql_init\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_close\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_createtables\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_delete\fP ()"
+.br
+.ti -1c
+.RI "void \fBsql_addchat\fP (const char name[], const char channel[], const char chat[], const char date[])"
+.br
+.ti -1c
+.RI "void \fBsql_lastseen\fP (const char name[])"
+.br
+.ti -1c
+.RI "void \fBsql_getchat\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "sqlite3 * \fBsqlitedb\fP = NULL"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define irc_sqlite3_cpp__"
+
+.PP
+Definition at line 2 of file irc_sqlite3\&.cpp\&.
+.SS "#define sqlite3Path   'log\&.sqlite3'"
+
+.PP
+Definition at line 17 of file irc_sqlite3\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void sql_addchat (const charname[], const charchannel[], const charchat[], const chardate[])"
+
+.PP
+Definition at line 38 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_close ()"
+
+.PP
+Definition at line 29 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_createtables ()"
+
+.PP
+Definition at line 32 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_delete ()"
+
+.PP
+Definition at line 35 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_getchat ()"
+
+.PP
+Definition at line 60 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_init ()"
+
+.PP
+Definition at line 23 of file irc_sqlite3\&.cpp\&.
+.SS "void sql_lastseen (const charname[])"
+
+.PP
+Definition at line 43 of file irc_sqlite3\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "sqlite3* sqlitedb = NULL"
+
+.PP
+Definition at line 18 of file irc_sqlite3\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'IRC Bot' from the source code\&.
