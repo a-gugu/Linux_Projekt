@@ -1,6 +1,7 @@
 #ifndef irc_sqlite3_h__
 #define irc_sqlite3_h__
 
+/*	Database functions */
 
 void sql_init();
 void sql_close();
