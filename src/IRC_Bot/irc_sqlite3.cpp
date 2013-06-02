@@ -14,14 +14,14 @@
 
 #include "irc_sqlite3.h"
 
-#define logFilePath "log.sqlite3"
+#define sqlite3Path "log.sqlite3"
 sqlite3 *sqlitedb = NULL;
 
 using namespace std;
 
 
 void sql_init(){
-	if(sqlite3_open(logFilePath, &sqlitedb) != 0)	
+	if(sqlite3_open(sqlite3Path, &sqlitedb) != 0)	
 		cout << "sql_init() :: sqlite3_open()";
 	
 	sql_createtables();

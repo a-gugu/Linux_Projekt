@@ -1,0 +1,14 @@
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=ircbot.cpp irc_func.cpp irc_sqlite3.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=ircbot
+
+all: $(SOURCES) $(EXECUTABLE)
+	
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
