@@ -52,40 +52,45 @@ void sql_addchat(const char name[],const char channel[],const char chat[], const
 }
 
 //Query by name and output not to uplink ********* Not done
-void sql_lastseen(const char name[]){
+std::string sql_lastseen(const char name[]){
 	
 	sqlite3_stmt *vm;
 	
 	std::stringstream s;
 	s << "SELECT * FROM chat WHERE nick ='" << name << "' ORDER BY id DESC LIMIT 1";
 	sqlite3_prepare(sqlitedb, s.str().c_str(), -1, &vm, NULL);
+	
+	std::stringstream ss;
+	
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
-		std::stringstream ss;
 		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
-		<< (char*)sqlite3_column_text(vm, 4);
-		
-		cout << ss.str() << endl;
+			<< (char*)sqlite3_column_text(vm, 4) << endl;
 	}
+	
 	sqlite3_finalize(vm);
+	
+	return ss.str();
 }
 //Output the log not to uplink ********* Not done
-void sql_getchat(){
+std::string sql_getchat(){
 	sqlite3_stmt *vm;
 	if(sqlite3_prepare(sqlitedb, "SELECT * FROM chat", -1, &vm, NULL) != 0)
 		sql_createtables();
 	
+	std::stringstream ss;
+	
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
-		std::stringstream ss;
-		ss << (char*)sqlite3_column_text(vm, 1) << " "
-			 << (char*)sqlite3_column_text(vm, 2) << " "
-			 << (char*)sqlite3_column_text(vm, 3) << " "
-			<< (char*)sqlite3_column_text(vm, 4);
-		
-		cout << ss.str() << endl << endl << endl;
+		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
+			<< (char*)sqlite3_column_text(vm, 2) << " "
+			<< (char*)sqlite3_column_text(vm, 3) << " "
+			<< (char*)sqlite3_column_text(vm, 4) << endl;
 	}
+	
 	sqlite3_finalize(vm);
+	
+	return ss.str();
 }
 
 

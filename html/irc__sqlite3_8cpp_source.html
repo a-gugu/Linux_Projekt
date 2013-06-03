@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>&#39;IRC Bot&#39;: src/irc_sqlite3.cpp Source File</title>
+<title>IRCBot: src/irc_sqlite3.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">&#39;IRC Bot&#39;
+   <div id="projectname">IRCBot
    </div>
   </td>
  </tr>
@@ -102,73 +102,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="irc__sqlite3_8h.html">irc_sqlite3.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="irc__sqlite3_8cpp.html#a91c0edd7fae1f28911fc16e220e32404">   17</a></span>&#160;<span class="preprocessor">#define sqlite3Path &quot;log.sqlite3&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">   18</a></span>&#160;<span class="preprocessor"></span>sqlite3 *<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a> = NULL;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//Path for finding and saving database</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="irc__sqlite3_8cpp.html#a91c0edd7fae1f28911fc16e220e32404">   18</a></span>&#160;<span class="preprocessor">#define sqlite3Path &quot;log.sqlite3&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//Pointer to database</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">   21</a></span>&#160;sqlite3 *<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a> = NULL;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a400ae178216b9a003dc73de7d6a9ab32">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a400ae178216b9a003dc73de7d6a9ab32">sql_init</a>(){</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(sqlite3_open(<a class="code" href="irc__sqlite3_8cpp.html#a91c0edd7fae1f28911fc16e220e32404">sqlite3Path</a>, &amp;<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>) != 0)   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;sql_init() :: sqlite3_open()&quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a84f3338c7173b819673e9df5bba3438f">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a84f3338c7173b819673e9df5bba3438f">sql_close</a>(){</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    sqlite3_close(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a659dc86fd74bbb9fe69e388feff44d9f">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>(){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;CREATE TABLE chat (id integer primary key, nick text, channel text, chat text, date text);&quot;</span>, NULL, NULL, NULL);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a2f849d1f36c9b89b7967f3e6aa165729">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a2f849d1f36c9b89b7967f3e6aa165729">sql_delete</a>(){</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;DROP TABLE chat&quot;</span>, NULL, NULL, NULL);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#aedb149cb818b4199c309d5c07484a84c">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#aedb149cb818b4199c309d5c07484a84c">sql_addchat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> name[],<span class="keyword">const</span> <span class="keywordtype">char</span> channel[],<span class="keyword">const</span> <span class="keywordtype">char</span> chat[], <span class="keyword">const</span> <span class="keywordtype">char</span> date[]){</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">char</span> tmp[1200];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    sprintf(tmp,<span class="stringliteral">&quot;INSERT INTO chat (nick,channel, chat, date) VALUES (&#39;%s&#39;, &#39;%s&#39;, &#39;%s&#39;, &#39;%s&#39;);&quot;</span>,name,channel,chat, date);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, tmp, NULL, NULL, NULL);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#adc7026fb28c611cd19915dc471b711f4">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#adc7026fb28c611cd19915dc471b711f4">sql_lastseen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> name[]){</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    sqlite3_stmt *vm;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    stringstream s;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    s &lt;&lt; <span class="stringliteral">&quot;SELECT * FROM chat WHERE nick =&#39;&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;&#39; ORDER BY id DESC LIMIT 1&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    sqlite3_prepare(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, s.str().c_str(), -1, &amp;vm, NULL);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">while</span> (sqlite3_step(vm) != SQLITE_DONE)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        stringstream ss;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ss  &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 4);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        cout &lt;&lt; ss.str() &lt;&lt; endl;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    sqlite3_finalize(vm);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a0a4f512c3e3b5a089f9df02721ac9108">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a0a4f512c3e3b5a089f9df02721ac9108">sql_getchat</a>(){</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    sqlite3_stmt *vm;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(sqlite3_prepare(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;SELECT * FROM chat&quot;</span>, -1, &amp;vm, NULL) != 0)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">while</span> (sqlite3_step(vm) != SQLITE_DONE)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        stringstream ss;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        ss &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 2) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 3) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 4);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        cout &lt;&lt; ss.str() &lt;&lt; endl &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    sqlite3_finalize(vm);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//Initialize the database if not exist</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a400ae178216b9a003dc73de7d6a9ab32">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a400ae178216b9a003dc73de7d6a9ab32">sql_init</a>(){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(sqlite3_open(<a class="code" href="irc__sqlite3_8cpp.html#a91c0edd7fae1f28911fc16e220e32404">sqlite3Path</a>, &amp;<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>) != 0)   </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;sql_init() :: sqlite3_open()&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//Close the database</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a84f3338c7173b819673e9df5bba3438f">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a84f3338c7173b819673e9df5bba3438f">sql_close</a>(){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    sqlite3_close(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//Create a table for saving nick || channel || chat || date</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a659dc86fd74bbb9fe69e388feff44d9f">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>(){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;CREATE TABLE chat (id integer primary key, nick text, channel text, chat text, date text);&quot;</span>, NULL, NULL, NULL);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//Drop the table</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a2f849d1f36c9b89b7967f3e6aa165729">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a2f849d1f36c9b89b7967f3e6aa165729">sql_delete</a>(){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;DROP TABLE chat&quot;</span>, NULL, NULL, NULL);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//Add a received message</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#aedb149cb818b4199c309d5c07484a84c">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#aedb149cb818b4199c309d5c07484a84c">sql_addchat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> name[],<span class="keyword">const</span> <span class="keywordtype">char</span> channel[],<span class="keyword">const</span> <span class="keywordtype">char</span> chat[], <span class="keyword">const</span> <span class="keywordtype">char</span> date[]){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">char</span> tmp[1200];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    sprintf(tmp,<span class="stringliteral">&quot;INSERT INTO chat (nick,channel, chat, date) VALUES (&#39;%s&#39;, &#39;%s&#39;, &#39;%s&#39;, &#39;%s&#39;);&quot;</span>,name,channel,chat, date);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sqlite3_exec(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, tmp, NULL, NULL, NULL);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//Query by name and output not to uplink ********* Not done</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#adc7026fb28c611cd19915dc471b711f4">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#adc7026fb28c611cd19915dc471b711f4">sql_lastseen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> name[]){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    sqlite3_stmt *vm;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::stringstream s;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    s &lt;&lt; <span class="stringliteral">&quot;SELECT * FROM chat WHERE nick =&#39;&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;&#39; ORDER BY id DESC LIMIT 1&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    sqlite3_prepare(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, s.str().c_str(), -1, &amp;vm, NULL);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">while</span> (sqlite3_step(vm) != SQLITE_DONE)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::stringstream ss;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ss  &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 4);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        cout &lt;&lt; ss.str() &lt;&lt; endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    sqlite3_finalize(vm);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//Output the log not to uplink ********* Not done</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="irc__sqlite3_8h.html#a0a4f512c3e3b5a089f9df02721ac9108">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="irc__sqlite3_8cpp.html#a0a4f512c3e3b5a089f9df02721ac9108">sql_getchat</a>(){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    sqlite3_stmt *vm;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(sqlite3_prepare(<a class="code" href="irc__sqlite3_8cpp.html#acfdcfca51665de8a634cbb451c2acacc">sqlitedb</a>, <span class="stringliteral">&quot;SELECT * FROM chat&quot;</span>, -1, &amp;vm, NULL) != 0)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="irc__sqlite3_8cpp.html#a659dc86fd74bbb9fe69e388feff44d9f">sql_createtables</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">while</span> (sqlite3_step(vm) != SQLITE_DONE)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::stringstream ss;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ss &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 2) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;             &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 3) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            &lt;&lt; (<span class="keywordtype">char</span>*)sqlite3_column_text(vm, 4);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        cout &lt;&lt; ss.str() &lt;&lt; endl &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    sqlite3_finalize(vm);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 3 2013 00:00:01 for 'IRC Bot' by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 3 2013 00:36:26 for IRCBot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
