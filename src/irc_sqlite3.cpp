@@ -24,7 +24,7 @@ sqlite3 *sqlitedb = NULL;
 //Initialize the database if not exist
 void sql_init(){
 	if(sqlite3_open(sqlite3Path, &sqlitedb) != 0)	
-		cout << "sql_init() :: sqlite3_open()";
+		std::cout << "sql_init() :: sqlite3_open()";
 	
 	sql_createtables();
 }
@@ -65,7 +65,7 @@ std::string sql_lastseen(const char name[]){
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
 		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
-			<< (char*)sqlite3_column_text(vm, 4) << endl;
+			<< (char*)sqlite3_column_text(vm, 4) << std::endl;
 	}
 	
 	sqlite3_finalize(vm);
@@ -85,7 +85,7 @@ std::string sql_getchat(){
 		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
 			<< (char*)sqlite3_column_text(vm, 2) << " "
 			<< (char*)sqlite3_column_text(vm, 3) << " "
-			<< (char*)sqlite3_column_text(vm, 4) << endl;
+			<< (char*)sqlite3_column_text(vm, 4) << std::endl;
 	}
 	
 	sqlite3_finalize(vm);
