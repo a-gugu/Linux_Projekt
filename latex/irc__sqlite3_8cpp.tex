@@ -1,0 +1,111 @@
+\hypertarget{irc__sqlite3_8cpp}{\section{src/irc\-\_\-sqlite3.cpp File Reference}
+\label{irc__sqlite3_8cpp}\index{src/irc\-\_\-sqlite3.\-cpp@{src/irc\-\_\-sqlite3.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$sqlite3.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}irc\-\_\-sqlite3.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{irc__sqlite3_8cpp_a196b2e99901c1fdc17075d81c5fa5b68}{irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-}
+\item 
+\#define \hyperlink{irc__sqlite3_8cpp_a91c0edd7fae1f28911fc16e220e32404}{sqlite3\-Path}~\char`\"{}log.\-sqlite3\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{irc__sqlite3_8cpp_a400ae178216b9a003dc73de7d6a9ab32}{sql\-\_\-init} ()
+\item 
+void \hyperlink{irc__sqlite3_8cpp_a84f3338c7173b819673e9df5bba3438f}{sql\-\_\-close} ()
+\item 
+void \hyperlink{irc__sqlite3_8cpp_a659dc86fd74bbb9fe69e388feff44d9f}{sql\-\_\-createtables} ()
+\item 
+void \hyperlink{irc__sqlite3_8cpp_a2f849d1f36c9b89b7967f3e6aa165729}{sql\-\_\-delete} ()
+\item 
+void \hyperlink{irc__sqlite3_8cpp_aedb149cb818b4199c309d5c07484a84c}{sql\-\_\-addchat} (const char name\mbox{[}$\,$\mbox{]}, const char channel\mbox{[}$\,$\mbox{]}, const char chat\mbox{[}$\,$\mbox{]}, const char date\mbox{[}$\,$\mbox{]})
+\item 
+std\-::string \hyperlink{irc__sqlite3_8cpp_a20c2b00eee4d1371897ed3112172573c}{sql\-\_\-lastseen} (const char name\mbox{[}$\,$\mbox{]})
+\item 
+std\-::string \hyperlink{irc__sqlite3_8cpp_a689b4867818aa5da2d9150a40590d1ce}{sql\-\_\-getchat} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+sqlite3 $\ast$ \hyperlink{irc__sqlite3_8cpp_acfdcfca51665de8a634cbb451c2acacc}{sqlitedb} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{irc__sqlite3_8cpp_a196b2e99901c1fdc17075d81c5fa5b68}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-@{irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-}}
+\index{irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-@{irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define irc\-\_\-sqlite3\-\_\-cpp\-\_\-\-\_\-}}\label{irc__sqlite3_8cpp_a196b2e99901c1fdc17075d81c5fa5b68}
+\hypertarget{irc__sqlite3_8cpp_a91c0edd7fae1f28911fc16e220e32404}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sqlite3\-Path@{sqlite3\-Path}}
+\index{sqlite3\-Path@{sqlite3\-Path}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sqlite3\-Path}]{\setlength{\rightskip}{0pt plus 5cm}\#define sqlite3\-Path~\char`\"{}log.\-sqlite3\char`\"{}}}\label{irc__sqlite3_8cpp_a91c0edd7fae1f28911fc16e220e32404}
+
+
+\subsection{Function Documentation}
+\hypertarget{irc__sqlite3_8cpp_aedb149cb818b4199c309d5c07484a84c}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-addchat@{sql\-\_\-addchat}}
+\index{sql\-\_\-addchat@{sql\-\_\-addchat}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-addchat}]{\setlength{\rightskip}{0pt plus 5cm}void sql\-\_\-addchat (
+\begin{DoxyParamCaption}
+\item[{const char}]{name\mbox{[}$\,$\mbox{]}, }
+\item[{const char}]{channel\mbox{[}$\,$\mbox{]}, }
+\item[{const char}]{chat\mbox{[}$\,$\mbox{]}, }
+\item[{const char}]{date\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_aedb149cb818b4199c309d5c07484a84c}
+\hypertarget{irc__sqlite3_8cpp_a84f3338c7173b819673e9df5bba3438f}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-close@{sql\-\_\-close}}
+\index{sql\-\_\-close@{sql\-\_\-close}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}void sql\-\_\-close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a84f3338c7173b819673e9df5bba3438f}
+\hypertarget{irc__sqlite3_8cpp_a659dc86fd74bbb9fe69e388feff44d9f}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-createtables@{sql\-\_\-createtables}}
+\index{sql\-\_\-createtables@{sql\-\_\-createtables}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-createtables}]{\setlength{\rightskip}{0pt plus 5cm}void sql\-\_\-createtables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a659dc86fd74bbb9fe69e388feff44d9f}
+\hypertarget{irc__sqlite3_8cpp_a2f849d1f36c9b89b7967f3e6aa165729}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-delete@{sql\-\_\-delete}}
+\index{sql\-\_\-delete@{sql\-\_\-delete}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-delete}]{\setlength{\rightskip}{0pt plus 5cm}void sql\-\_\-delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a2f849d1f36c9b89b7967f3e6aa165729}
+\hypertarget{irc__sqlite3_8cpp_a689b4867818aa5da2d9150a40590d1ce}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-getchat@{sql\-\_\-getchat}}
+\index{sql\-\_\-getchat@{sql\-\_\-getchat}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-getchat}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string sql\-\_\-getchat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a689b4867818aa5da2d9150a40590d1ce}
+\hypertarget{irc__sqlite3_8cpp_a400ae178216b9a003dc73de7d6a9ab32}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-init@{sql\-\_\-init}}
+\index{sql\-\_\-init@{sql\-\_\-init}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sql\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a400ae178216b9a003dc73de7d6a9ab32}
+\hypertarget{irc__sqlite3_8cpp_a20c2b00eee4d1371897ed3112172573c}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sql\-\_\-lastseen@{sql\-\_\-lastseen}}
+\index{sql\-\_\-lastseen@{sql\-\_\-lastseen}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sql\-\_\-lastseen}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string sql\-\_\-lastseen (
+\begin{DoxyParamCaption}
+\item[{const char}]{name\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{irc__sqlite3_8cpp_a20c2b00eee4d1371897ed3112172573c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{irc__sqlite3_8cpp_acfdcfca51665de8a634cbb451c2acacc}{\index{irc\-\_\-sqlite3.\-cpp@{irc\-\_\-sqlite3.\-cpp}!sqlitedb@{sqlitedb}}
+\index{sqlitedb@{sqlitedb}!irc_sqlite3.cpp@{irc\-\_\-sqlite3.\-cpp}}
+\subsubsection[{sqlitedb}]{\setlength{\rightskip}{0pt plus 5cm}sqlite3$\ast$ sqlitedb = N\-U\-L\-L}}\label{irc__sqlite3_8cpp_acfdcfca51665de8a634cbb451c2acacc}

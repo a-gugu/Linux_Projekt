@@ -1,0 +1,130 @@
+\hypertarget{irc__func_8cpp}{\section{src/irc\-\_\-func.cpp File Reference}
+\label{irc__func_8cpp}\index{src/irc\-\_\-func.\-cpp@{src/irc\-\_\-func.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$sqlite3.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$netdb.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}irc\-\_\-func.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}irc\-\_\-sqlite3.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{irc__func_8cpp_adf1652123c7f9f57fdd776e3c276a13b}{irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-}
+\item 
+\#define \hyperlink{irc__func_8cpp_a842ed03f27719bc87666bfd1f75415b8}{M\-A\-X\-\_\-\-L\-I\-N\-E}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{irc__func_8cpp_ac188bf3edc78d069da8bdf58a6d8364a}{irc\-\_\-connect} (int port, char $\ast$host)
+\item 
+void \hyperlink{irc__func_8cpp_abb028a46ea1d1f86b82a58bc1ca262a6}{irc\-\_\-disconnect} ()
+\item 
+void \hyperlink{irc__func_8cpp_aa96b2951f6b3082fff4065850a569dae}{irc\-\_\-identify} ()
+\item 
+void \hyperlink{irc__func_8cpp_a9c0fe5eddd2dea19f69cf1617c23529f}{irc\-\_\-receive} ()
+\item 
+void \hyperlink{irc__func_8cpp_aeb77f385d8c971bee76e19f9359d4273}{ping\-\_\-parse} (const string \&buffer)
+\item 
+void \hyperlink{irc__func_8cpp_ad50ebbf021dc41d5db41f2813a55bd7a}{bot\-\_\-functions} (const string \&buffer)
+\item 
+void \hyperlink{irc__func_8cpp_a4201cef228d3a7e8b462df39a9226d9d}{s2u} (const char $\ast$msg)
+\item 
+void \hyperlink{irc__func_8cpp_a6ed587c61178f079e8d3a9517a60c433}{irc\-\_\-parse} (string buffer)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{irc__func_8cpp_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}
+\item 
+int \hyperlink{irc__func_8cpp_a4ce1e21a893fd05e4b73f6ad00b4e832}{save\-Log} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{irc__func_8cpp_adf1652123c7f9f57fdd776e3c276a13b}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-@{irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-}}
+\index{irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-@{irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define irc\-\_\-func\-\_\-cpp\-\_\-\-\_\-}}\label{irc__func_8cpp_adf1652123c7f9f57fdd776e3c276a13b}
+\hypertarget{irc__func_8cpp_a842ed03f27719bc87666bfd1f75415b8}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!M\-A\-X\-\_\-\-L\-I\-N\-E@{M\-A\-X\-\_\-\-L\-I\-N\-E}}
+\index{M\-A\-X\-\_\-\-L\-I\-N\-E@{M\-A\-X\-\_\-\-L\-I\-N\-E}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-L\-I\-N\-E~1024}}\label{irc__func_8cpp_a842ed03f27719bc87666bfd1f75415b8}
+
+
+\subsection{Function Documentation}
+\hypertarget{irc__func_8cpp_ad50ebbf021dc41d5db41f2813a55bd7a}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!bot\-\_\-functions@{bot\-\_\-functions}}
+\index{bot\-\_\-functions@{bot\-\_\-functions}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{bot\-\_\-functions}]{\setlength{\rightskip}{0pt plus 5cm}void bot\-\_\-functions (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_ad50ebbf021dc41d5db41f2813a55bd7a}
+\hypertarget{irc__func_8cpp_ac188bf3edc78d069da8bdf58a6d8364a}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-connect@{irc\-\_\-connect}}
+\index{irc\-\_\-connect@{irc\-\_\-connect}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}void irc\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{int}]{port, }
+\item[{char $\ast$}]{host}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_ac188bf3edc78d069da8bdf58a6d8364a}
+\hypertarget{irc__func_8cpp_abb028a46ea1d1f86b82a58bc1ca262a6}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-disconnect@{irc\-\_\-disconnect}}
+\index{irc\-\_\-disconnect@{irc\-\_\-disconnect}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void irc\-\_\-disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_abb028a46ea1d1f86b82a58bc1ca262a6}
+\hypertarget{irc__func_8cpp_aa96b2951f6b3082fff4065850a569dae}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-identify@{irc\-\_\-identify}}
+\index{irc\-\_\-identify@{irc\-\_\-identify}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-identify}]{\setlength{\rightskip}{0pt plus 5cm}void irc\-\_\-identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_aa96b2951f6b3082fff4065850a569dae}
+\hypertarget{irc__func_8cpp_a6ed587c61178f079e8d3a9517a60c433}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-parse@{irc\-\_\-parse}}
+\index{irc\-\_\-parse@{irc\-\_\-parse}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}void irc\-\_\-parse (
+\begin{DoxyParamCaption}
+\item[{string}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_a6ed587c61178f079e8d3a9517a60c433}
+\hypertarget{irc__func_8cpp_a9c0fe5eddd2dea19f69cf1617c23529f}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!irc\-\_\-receive@{irc\-\_\-receive}}
+\index{irc\-\_\-receive@{irc\-\_\-receive}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{irc\-\_\-receive}]{\setlength{\rightskip}{0pt plus 5cm}void irc\-\_\-receive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_a9c0fe5eddd2dea19f69cf1617c23529f}
+\hypertarget{irc__func_8cpp_aeb77f385d8c971bee76e19f9359d4273}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!ping\-\_\-parse@{ping\-\_\-parse}}
+\index{ping\-\_\-parse@{ping\-\_\-parse}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{ping\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}void ping\-\_\-parse (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_aeb77f385d8c971bee76e19f9359d4273}
+\hypertarget{irc__func_8cpp_a4201cef228d3a7e8b462df39a9226d9d}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!s2u@{s2u}}
+\index{s2u@{s2u}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{s2u}]{\setlength{\rightskip}{0pt plus 5cm}void s2u (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{irc__func_8cpp_a4201cef228d3a7e8b462df39a9226d9d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{irc__func_8cpp_a4ce1e21a893fd05e4b73f6ad00b4e832}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!save\-Log@{save\-Log}}
+\index{save\-Log@{save\-Log}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{save\-Log}]{\setlength{\rightskip}{0pt plus 5cm}int save\-Log =0}}\label{irc__func_8cpp_a4ce1e21a893fd05e4b73f6ad00b4e832}
+\hypertarget{irc__func_8cpp_ad2c8fb3df3a737e0685e902870a611d2}{\index{irc\-\_\-func.\-cpp@{irc\-\_\-func.\-cpp}!sockfd@{sockfd}}
+\index{sockfd@{sockfd}!irc_func.cpp@{irc\-\_\-func.\-cpp}}
+\subsubsection[{sockfd}]{\setlength{\rightskip}{0pt plus 5cm}int sockfd}}\label{irc__func_8cpp_ad2c8fb3df3a737e0685e902870a611d2}

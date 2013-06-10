@@ -7,7 +7,11 @@
  *This irc bot setup the connection with a given address 
  *	works on >irc.europa-irc.de 6667<
  *	create a sqlite3 database to save and query logs
+ 
+ *	default name of this bot:: Frosch87
+ 
  *-->function to use
+ 
  *		print			<== to output the database
  *		savestart		<== to start the loggin
  *		savestop		<== to stop the loggin

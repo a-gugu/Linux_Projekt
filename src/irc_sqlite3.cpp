@@ -51,7 +51,7 @@ void sql_addchat(const char name[],const char channel[],const char chat[], const
 	sqlite3_exec(sqlitedb, tmp, NULL, NULL, NULL);
 }
 
-//Query by name and output not to uplink ********* Not done
+//Query by name and output  to uplink
 std::string sql_lastseen(const char name[]){
 	
 	sqlite3_stmt *vm;
@@ -72,7 +72,7 @@ std::string sql_lastseen(const char name[]){
 	
 	return ss.str();
 }
-//Output the log not to uplink ********* Not done
+//Output the log to uplink
 std::string sql_getchat(){
 	sqlite3_stmt *vm;
 	if(sqlite3_prepare(sqlitedb, "SELECT * FROM chat", -1, &vm, NULL) != 0)

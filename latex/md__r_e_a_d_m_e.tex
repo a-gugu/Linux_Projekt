@@ -1,0 +1,115 @@
+I\-R\-C Bot \begin{DoxyVerb}man - display system documentation
+\end{DoxyVerb}
+
+
+S\-Y\-N\-O\-P\-S\-I\-S \begin{DoxyVerb}man [-k] name...
+\end{DoxyVerb}
+
+
+D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N
+
+The man utility shall write information about each of the name operands. If name is the name of a standard utility, man at a minimum shall write a message describing the syntax used by the standard utility, its options, and operands. If more information is available, the man utility shall provide it in an implementation-\/defined manner.
+
+An implementation may provide information for values of name other than the standard utilities. Standard utilities that are listed as optional and that are not supported by the implementation either shall cause a brief message indicating that fact to be displayed or shall cause a full display of information as described previously.
+
+O\-P\-T\-I\-O\-N\-S
+
+The man utility shall conform to the Base Definitions volume of I\-E\-E\-E Std 1003.\-1-\/2001, Section 12.\-2, Utility Syntax Guidelines.
+
+The following option shall be supported\-:
+
+-\/k Interpret name operands as keywords to be used in searching a utilities summary database that contains a brief purpose entry for each standard utility and write lines from the summary database that match any of the keywords. The keyword search shall produce results that are the equivalent of the output of the following command\-: grep -\/\-Ei ' name name... ' summary-\/database This assumes that the summary-\/database is a text file with a single entry per line; this organization is not required and the example using grep -\/\-Ei is merely illustrative of the type of search intended. The purpose entry to be included in the database shall consist of a terse description of the purpose of the utility.
+
+O\-P\-E\-R\-A\-N\-D\-S
+
+The following operand shall be supported\-:
+
+name A keyword or the name of a standard utility. When -\/k is not specified and name does not represent one of the standard utilities, the results are unspecified. S\-T\-D\-I\-N
+
+Not used.
+
+I\-N\-P\-U\-T F\-I\-L\-E\-S
+
+None.
+
+E\-N\-V\-I\-R\-O\-N\-M\-E\-N\-T V\-A\-R\-I\-A\-B\-L\-E\-S
+
+The following environment variables shall affect the execution of man\-:
+
+L\-A\-N\-G Provide a default value for the internationalization variables that are unset or null. (See the Base Definitions volume of I\-E\-E\-E Std 1003.\-1-\/2001, Section 8.\-2, Internationalization Variables for the precedence of internationalization variables used to determine the values of locale categories.) L\-C\-\_\-\-A\-L\-L If set to a non-\/empty string value, override the values of all the other internationalization variables. L\-C\-\_\-\-C\-T\-Y\-P\-E Determine the locale for the interpretation of sequences of bytes of text data as characters (for example, single-\/byte as opposed to multi-\/byte characters in arguments and in the summary database). The value of L\-C\-\_\-\-C\-T\-Y\-P\-E need not affect the format of the information written about the name operands. L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S Determine the locale that should be used to affect the format and contents of diagnostic messages written to standard error and informative messages written to standard output. N\-L\-S\-P\-A\-T\-H \mbox{[}X\-S\-I\mbox{]} Determine the location of message catalogs for the processing of L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S . P\-A\-G\-E\-R Determine an output filtering command for writing the output to a terminal. Any string acceptable as a command\-\_\-string operand to the sh -\/c command shall be valid. When standard output is a terminal device, the reference page output shall be piped through the command. If the P\-A\-G\-E\-R variable is null or not set, the command shall be either more or another paginator utility documented in the system documentation. A\-S\-Y\-N\-C\-H\-R\-O\-N\-O\-U\-S E\-V\-E\-N\-T\-S
+
+Default.
+
+S\-T\-D\-O\-U\-T
+
+The man utility shall write text describing the syntax of the utility name, its options and its operands, or, when -\/k is specified, lines from the summary database. The format of this text is implementation-\/defined.
+
+S\-T\-D\-E\-R\-R
+
+The standard error shall be used only for diagnostic messages.
+
+O\-U\-T\-P\-U\-T F\-I\-L\-E\-S
+
+None.
+
+E\-X\-T\-E\-N\-D\-E\-D D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N
+
+None.
+
+E\-X\-I\-T S\-T\-A\-T\-U\-S
+
+The following exit values shall be returned\-:
+
+0 Successful completion. $>$0 An error occurred. C\-O\-N\-S\-E\-Q\-U\-E\-N\-C\-E\-S O\-F E\-R\-R\-O\-R\-S
+
+Default.
+
+The following sections are informative. A\-P\-P\-L\-I\-C\-A\-T\-I\-O\-N U\-S\-A\-G\-E
+
+None.
+
+E\-X\-A\-M\-P\-L\-E\-S
+
+None.
+
+R\-A\-T\-I\-O\-N\-A\-L\-E
+
+It is recognized that the man utility is only of minimal usefulness as specified. The opinion of the standard developers was strongly divided as to how much or how little information man should be required to provide. They considered, however, that the provision of some portable way of accessing documentation would aid user portability. The arguments against a fuller specification were\-:
+
+Large quantities of documentation should not be required on a system that does not have excess disk space.
+
+The current manual system does not present information in a manner that greatly aids user portability.
+
+A \char`\"{}better help system\char`\"{} is currently an area in which vendors feel that they can add value to their P\-O\-S\-I\-X implementations.
+
+The -\/f option was considered, but due to implementation differences, it was not included in this volume of I\-E\-E\-E Std 1003.\-1-\/2001.
+
+The description was changed to be more specific about what has to be displayed for a utility. The standard developers considered it insufficient to allow a display of only the synopsis without giving a short description of what each option and operand does.
+
+The \char`\"{}purpose\char`\"{} entry to be included in the database can be similar to the section title (less the numeric prefix) from this volume of I\-E\-E\-E Std 1003.\-1-\/2001 for each utility. These titles are similar to those used in historical systems for this purpose.
+
+See mailx for rationale concerning the default paginator.
+
+The caveat in the L\-C\-\_\-\-C\-T\-Y\-P\-E description was added because it is not a requirement that an implementation provide reference pages for all of its supported locales on each system; changing L\-C\-\_\-\-C\-T\-Y\-P\-E does not necessarily translate the reference page into another language. This is equivalent to the current state of L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S in I\-E\-E\-E Std 1003.\-1-\/2001-\/locale-\/specific messages are not yet a requirement.
+
+The historical M\-A\-N\-P\-A\-T\-H variable is not included in P\-O\-S\-I\-X because no attempt is made to specify naming conventions for reference page files, nor even to mandate that they are files at all. On some implementations they could be a true database, a hypertext file, or even fixed strings within the man executable. The standard developers considered the portability of reference pages to be outside their scope of work. However, users should be aware that M\-A\-N\-P\-A\-T\-H is implemented on a number of historical systems and that it can be used to tailor the search pattern for reference pages from the various categories (utilities, functions, file formats, and so on) when the system administrator reveals the location and conventions for reference pages on the system.
+
+The keyword search can rely on at least the text of the section titles from these utility descriptions, and the implementation may add more keywords. The term \char`\"{}section titles\char`\"{} refers to the strings such as\-:
+
+man -\/ Display system documentation ps -\/ Report process status
+
+F\-U\-T\-U\-R\-E D\-I\-R\-E\-C\-T\-I\-O\-N\-S
+
+None.
+
+S\-E\-E A\-L\-S\-O
+
+more
+
+C\-H\-A\-N\-G\-E H\-I\-S\-T\-O\-R\-Y
+
+First released in Issue 4.
+
+Issue 5
+
+The F\-U\-T\-U\-R\-E D\-I\-R\-E\-C\-T\-I\-O\-N\-S section is added. 

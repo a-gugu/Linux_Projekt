@@ -5,6 +5,7 @@
 
 #include <string>
 
+
 void irc_connect(int port, char* host);
 void irc_disconnect();
 void irc_identify();
