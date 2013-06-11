@@ -79,13 +79,13 @@ std::string sql_getchat(){
 		sql_createtables();
 	
 	std::stringstream ss;
-	
+
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
 		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
 			<< (char*)sqlite3_column_text(vm, 2) << " "
 			<< (char*)sqlite3_column_text(vm, 3) << " "
-			<< (char*)sqlite3_column_text(vm, 4) << std::endl;
+			<< (char*)sqlite3_column_text(vm, 4) << " $ ";
 	}
 	
 	sqlite3_finalize(vm);

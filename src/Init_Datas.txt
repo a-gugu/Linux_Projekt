@@ -1,0 +1,28 @@
+IRCBOT:
+counts=4;
+
+Bot
+	Name: Frosch1999
+	port: 6667
+	server: irc.wikkedwire.com
+	channel: #Frosch1999
+
+Bot
+	Name: HansSarpei
+	port: 6667
+	server: irc.europa-irc.de
+	channel: #HansSarpei
+
+Bot
+	Name: Frosch1999
+	port: 6667
+	server: irc.wikkedwire.com
+	channel: #Frosch1999
+Bot
+	Name: HansSarpei
+	port: 6667
+	server: irc.europa-irc.de
+	channel: #HansSarpei
+
+
+ENDE
