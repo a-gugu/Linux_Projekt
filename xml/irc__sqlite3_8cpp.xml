@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="irc__sqlite3_8cpp" kind="file">
+    <compoundname>irc_sqlite3.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">sqlite3.h</includes>
+    <includes refid="irc__sqlite3_8h" local="yes">irc_sqlite3.h</includes>
+    <incdepgraph>
+      <node id="32">
+        <label>src/irc_sqlite3.cpp</label>
+        <link refid="irc_sqlite3.cpp"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>string</label>
+      </node>
+      <node id="40">
+        <label>sqlite3.h</label>
+      </node>
+      <node id="38">
+        <label>fstream</label>
+      </node>
+      <node id="36">
+        <label>cstdio</label>
+      </node>
+      <node id="39">
+        <label>sstream</label>
+      </node>
+      <node id="35">
+        <label>cstdlib</label>
+      </node>
+      <node id="41">
+        <label>irc_sqlite3.h</label>
+        <link refid="irc__sqlite3_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>iostream</label>
+      </node>
+      <node id="37">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="irc__sqlite3_8cpp_1a196b2e99901c1fdc17075d81c5fa5b68" prot="public" static="no">
+        <name>irc_sqlite3_cpp__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="2" column="9" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="irc__sqlite3_8cpp_1a91c0edd7fae1f28911fc16e220e32404" prot="public" static="no">
+        <name>sqlite3Path</name>
+        <initializer>&quot;log.sqlite3&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="18" column="9" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" prot="public" static="no" mutable="no">
+        <type>sqlite3 *</type>
+        <definition>sqlite3* sqlitedb</definition>
+        <argsstring></argsstring>
+        <name>sqlitedb</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="21" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a400ae178216b9a003dc73de7d6a9ab32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sql_init</definition>
+        <argsstring>()</argsstring>
+        <name>sql_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="25" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a84f3338c7173b819673e9df5bba3438f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sql_close</definition>
+        <argsstring>()</argsstring>
+        <name>sql_close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="33" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a659dc86fd74bbb9fe69e388feff44d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sql_createtables</definition>
+        <argsstring>()</argsstring>
+        <name>sql_createtables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="38" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a2f849d1f36c9b89b7967f3e6aa165729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sql_delete</definition>
+        <argsstring>()</argsstring>
+        <name>sql_delete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="43" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1aedb149cb818b4199c309d5c07484a84c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sql_addchat</definition>
+        <argsstring>(const char name[], const char channel[], const char chat[], const char date[])</argsstring>
+        <name>sql_addchat</name>
+        <param>
+          <type>const char</type>
+          <declname>name</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char</type>
+          <declname>channel</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char</type>
+          <declname>chat</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char</type>
+          <declname>date</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="48" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a20c2b00eee4d1371897ed3112172573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string sql_lastseen</definition>
+        <argsstring>(const char name[])</argsstring>
+        <name>sql_lastseen</name>
+        <param>
+          <type>const char</type>
+          <declname>name</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="55" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="55" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__sqlite3_8cpp_1a689b4867818aa5da2d9150a40590d1ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string sql_getchat</definition>
+        <argsstring>()</argsstring>
+        <name>sql_getchat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" line="76" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp" bodystart="76" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>irc_sqlite3_cpp__</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>irc_sqlite3_cpp__</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sqlite3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="irc__sqlite3_8h" kindref="compound">irc_sqlite3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//Path<sp/>for<sp/>finding<sp/>and<sp/>saving<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>sqlite3Path<sp/>&quot;log.sqlite3&quot;</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//Pointer<sp/>to<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">sqlite3<sp/>*<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//Initialize<sp/>the<sp/>database<sp/>if<sp/>not<sp/>exist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__sqlite3_8cpp_1a400ae178216b9a003dc73de7d6a9ab32" kindref="member">sql_init</ref>(){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sqlite3_open(<ref refid="irc__sqlite3_8cpp_1a91c0edd7fae1f28911fc16e220e32404" kindref="member">sqlite3Path</ref>,<sp/>&amp;<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>)<sp/>!=<sp/>0)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;sql_init()<sp/>::<sp/>sqlite3_open()&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="irc__sqlite3_8cpp_1a659dc86fd74bbb9fe69e388feff44d9f" kindref="member">sql_createtables</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//Close<sp/>the<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__sqlite3_8cpp_1a84f3338c7173b819673e9df5bba3438f" kindref="member">sql_close</ref>(){</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_close(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//Create<sp/>a<sp/>table<sp/>for<sp/>saving<sp/>nick<sp/>||<sp/>channel<sp/>||<sp/>chat<sp/>||<sp/>date</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__sqlite3_8cpp_1a659dc86fd74bbb9fe69e388feff44d9f" kindref="member">sql_createtables</ref>(){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_exec(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>,<sp/></highlight><highlight class="stringliteral">&quot;CREATE<sp/>TABLE<sp/>chat<sp/>(id<sp/>integer<sp/>primary<sp/>key,<sp/>nick<sp/>text,<sp/>channel<sp/>text,<sp/>chat<sp/>text,<sp/>date<sp/>text);&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//Drop<sp/>the<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__sqlite3_8cpp_1a2f849d1f36c9b89b7967f3e6aa165729" kindref="member">sql_delete</ref>(){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_exec(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>,<sp/></highlight><highlight class="stringliteral">&quot;DROP<sp/>TABLE<sp/>chat&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//Add<sp/>a<sp/>received<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__sqlite3_8cpp_1aedb149cb818b4199c309d5c07484a84c" kindref="member">sql_addchat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>name[],</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>channel[],</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>chat[],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>date[]){</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>tmp[1200];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(tmp,</highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>chat<sp/>(nick,channel,<sp/>chat,<sp/>date)<sp/>VALUES<sp/>(&apos;%s&apos;,<sp/>&apos;%s&apos;,<sp/>&apos;%s&apos;,<sp/>&apos;%s&apos;);&quot;</highlight><highlight class="normal">,name,channel,chat,<sp/>date);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_exec(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>,<sp/>tmp,<sp/>NULL,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//Query<sp/>by<sp/>name<sp/>and<sp/>output<sp/><sp/>to<sp/>uplink</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">std::string<sp/><ref refid="irc__sqlite3_8cpp_1a20c2b00eee4d1371897ed3112172573c" kindref="member">sql_lastseen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>name[]){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_stmt<sp/>*vm;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>s;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>s<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;SELECT<sp/>*<sp/>FROM<sp/>chat<sp/>WHERE<sp/>nick<sp/>=&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;<sp/>ORDER<sp/>BY<sp/>id<sp/>DESC<sp/>LIMIT<sp/>1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_prepare(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>,<sp/>s.str().c_str(),<sp/>-1,<sp/>&amp;vm,<sp/>NULL);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(sqlite3_step(vm)<sp/>!=<sp/>SQLITE_DONE)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>1)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>4)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_finalize(vm);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//Output<sp/>the<sp/>log<sp/>to<sp/>uplink</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">std::string<sp/><ref refid="irc__sqlite3_8cpp_1a689b4867818aa5da2d9150a40590d1ce" kindref="member">sql_getchat</ref>(){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_stmt<sp/>*vm;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sqlite3_prepare(<ref refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kindref="member">sqlitedb</ref>,<sp/></highlight><highlight class="stringliteral">&quot;SELECT<sp/>*<sp/>FROM<sp/>chat&quot;</highlight><highlight class="normal">,<sp/>-1,<sp/>&amp;vm,<sp/>NULL)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="irc__sqlite3_8cpp_1a659dc86fd74bbb9fe69e388feff44d9f" kindref="member">sql_createtables</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(sqlite3_step(vm)<sp/>!=<sp/>SQLITE_DONE)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>1)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>3)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)sqlite3_column_text(vm,<sp/>4)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>$<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sqlite3_finalize(vm);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_sqlite3.cpp"/>
+  </compounddef>
+</doxygen>

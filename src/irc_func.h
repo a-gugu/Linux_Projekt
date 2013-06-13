@@ -8,7 +8,7 @@
 
 void irc_connect(int port, char* host);
 void irc_disconnect();
-void irc_identify();
+void irc_identify(char* name,char* channel);
 void irc_parse(std::string buffer);
 void irc_receive();
 

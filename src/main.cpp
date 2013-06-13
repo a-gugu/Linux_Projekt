@@ -22,15 +22,14 @@ pid_t *pID;//Defines max bot process now 10
 string& getfile(const string& filename, string& buffer);
 
 
-void test();
+void filldatas();
 
-void filldatas(Ircbot &bot, string datas);
 
 int main(){
 	
-	int pidIter = 0; 
+	unsigned int pidIter = 0; 
 	
-	test();
+	filldatas();
 	
 	while (pidIter < (sizeof(pID)/sizeof(pID[0]))) {
 		
@@ -44,7 +43,7 @@ int main(){
 		else if(pID[pidIter] == 0){
 			//Child call the bot application
 			
-			if(execlp ("./ircbot", "./ircbot", bot[pidIter].port.c_str(), bot[pidIter].server.c_str(), NULL))
+			if(execlp ("./ircbot", "./ircbot", bot[pidIter].port.c_str(), bot[pidIter].server.c_str(), bot[pidIter].name.c_str(), bot[pidIter].channel.c_str(), NULL))
 				perror("execvp()");
 			
 			cout << "Should not show this";
@@ -60,7 +59,7 @@ int main(){
 	return 0;
 }
 
-void test(){
+void filldatas(){
 	
 	
 	string text;
@@ -71,8 +70,6 @@ void test(){
 	pID = new pid_t[counts];
 	
 	bot = new myIrcbot[counts];
-	
-	
 	
 	text = text.substr(text.find("Bot"));
 	
@@ -89,7 +86,7 @@ void test(){
 	
 	
 	int iBot = 0;
-	for (int i = 0; i < user_vec.size(); i++) {
+	for (unsigned int i = 0; i < user_vec.size(); i++) {
 		
 		size_t pos;
 		
@@ -116,10 +113,10 @@ void test(){
 			}
 		
 		
-		bot[iBot].name.erase(remove(bot[iBot].name.begin(), bot[iBot].name.end(), ' '), bot[iBot].name.end());
-		bot[iBot].port.erase(remove(bot[iBot].port.begin(), bot[iBot].port.end(), ' '), bot[iBot].port.end());
-		bot[iBot].server.erase(remove(bot[iBot].server.begin(), bot[iBot].server.end(), ' '), bot[iBot].server.end());
-		bot[iBot].channel.erase(remove(bot[iBot].channel.begin(), bot[iBot].channel.end(), ' '), bot[iBot].channel.end());
+		bot[iBot].name.erase(		remove(bot[iBot].name.begin(),		bot[iBot].name.end(),		' '), bot[iBot].name.end());
+		bot[iBot].port.erase(		remove(bot[iBot].port.begin(),		bot[iBot].port.end(),		' '), bot[iBot].port.end());
+		bot[iBot].server.erase(		remove(bot[iBot].server.begin(),	bot[iBot].server.end(),		' '), bot[iBot].server.end());
+		bot[iBot].channel.erase(	remove(bot[iBot].channel.begin(),	bot[iBot].channel.end(),	' '), bot[iBot].channel.end());
 
 		++iBot;
 		}
@@ -127,6 +124,16 @@ void test(){
 	}
 	
 }
+
+/*
+
+	s.erase(0, s.find_first_not_of(" "));
+
+	str.erase(str.find_last_not_of(" ")+1);
+
+	transform(str.begin(), str.end(), str.begin(), ::tolower);
+    
+*/
 	
 
 string& getfile(const string& filename, string& buffer) {

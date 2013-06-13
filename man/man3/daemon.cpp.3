@@ -1,0 +1,58 @@
+.TH "src/daemon.cpp" 3 "Wed Jun 12 2013" "Version 0.1" "IRC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/daemon.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCHILD\fP   0"
+.br
+.ti -1c
+.RI "#define \fBERROR\fP   -1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBstart_daemon\fP (const char *log_name, int facility)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CHILD   0"
+
+.SS "#define ERROR   -1"
+
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+
+.SS "void start_daemon (const char *log_name, intfacility)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for IRC from the source code\&.

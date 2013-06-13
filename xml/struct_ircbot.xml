@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="struct_ircbot" kind="struct" prot="public">
+    <compoundname>Ircbot</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Ircbot::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="13" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Ircbot::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="14" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Ircbot::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="15" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Ircbot::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="16" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="12" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="12" bodyend="17"/>
+    <listofallmembers>
+      <member refid="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" prot="public" virt="non-virtual"><scope>Ircbot</scope><name>channel</name></member>
+      <member refid="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" prot="public" virt="non-virtual"><scope>Ircbot</scope><name>name</name></member>
+      <member refid="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" prot="public" virt="non-virtual"><scope>Ircbot</scope><name>port</name></member>
+      <member refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" prot="public" virt="non-virtual"><scope>Ircbot</scope><name>server</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

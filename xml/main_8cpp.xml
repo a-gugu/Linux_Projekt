@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="main_8cpp" kind="file">
+    <compoundname>main.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">sstream</includes>
+    <incdepgraph>
+      <node id="59">
+        <label>string</label>
+      </node>
+      <node id="58">
+        <label>fstream</label>
+      </node>
+      <node id="61">
+        <label>cstdio</label>
+      </node>
+      <node id="63">
+        <label>vector</label>
+      </node>
+      <node id="64">
+        <label>sstream</label>
+      </node>
+      <node id="56">
+        <label>src/main.cpp</label>
+        <link refid="main.cpp"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>cstdlib</label>
+      </node>
+      <node id="57">
+        <label>iostream</label>
+      </node>
+      <node id="62">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_ircbot" prot="public">Ircbot</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="main_8cpp_1ace47a89c1a05a70e2939de4b18624209" prot="public" static="no">
+        <type>struct <ref refid="struct_ircbot" kindref="compound">Ircbot</ref></type>
+        <definition>typedef struct Ircbot myIrcbot</definition>
+        <argsstring></argsstring>
+        <name>myIrcbot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1af0b107767967f2e132f7d38006543421" prot="public" static="no" mutable="no">
+        <type><ref refid="main_8cpp_1ace47a89c1a05a70e2939de4b18624209" kindref="member">myIrcbot</ref> *</type>
+        <definition>myIrcbot* bot</definition>
+        <argsstring></argsstring>
+        <name>bot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="19" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" prot="public" static="no" mutable="no">
+        <type>pid_t *</type>
+        <definition>pid_t* pID</definition>
+        <argsstring></argsstring>
+        <name>pID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="20" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1a461d9a99c6ae082cad959027f2762081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string &amp; getfile</definition>
+        <argsstring>(const string &amp;filename, string &amp;buffer)</argsstring>
+        <name>getfile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="22" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="132" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ae1a3968e7947464bee7714f6d43b7002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test</definition>
+        <argsstring>()</argsstring>
+        <name>test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="25" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="63" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a5aaf9a984640187672522d0ca12440ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void filldatas</definition>
+        <argsstring>(Ircbot &amp;bot, string datas)</argsstring>
+        <name>filldatas</name>
+        <param>
+          <type><ref refid="struct_ircbot" kindref="compound">Ircbot</ref> &amp;</type>
+          <declname>bot</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>datas</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="27" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" line="29" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp" bodystart="29" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="struct_ircbot" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_ircbot" kindref="compound">Ircbot</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>port;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>server;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>channel;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<ref refid="main_8cpp_1ace47a89c1a05a70e2939de4b18624209" kindref="member">myIrcbot</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="struct_ircbot" kindref="compound">myIrcbot</ref><sp/>*<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">pid_t<sp/>*<ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>;</highlight><highlight class="comment">//Defines<sp/>max<sp/>bot<sp/>process<sp/>now<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="main_8cpp_1a461d9a99c6ae082cad959027f2762081" kindref="member">getfile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>filename,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>buffer);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae1a3968e7947464bee7714f6d43b7002" kindref="member">test</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a5aaf9a984640187672522d0ca12440ff" kindref="member">filldatas</ref>(<ref refid="struct_ircbot" kindref="compound">Ircbot</ref><sp/>&amp;<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>datas);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="daemon_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(){</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pidIter<sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae1a3968e7947464bee7714f6d43b7002" kindref="member">test</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(pidIter<sp/>&lt;<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>)/</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>[0])))<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>[pidIter]<sp/>=<sp/>fork();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>[pidIter]<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>fork&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref>[pidIter]<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Child<sp/>call<sp/>the<sp/>bot<sp/>application</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(execlp<sp/>(</highlight><highlight class="stringliteral">&quot;./ircbot&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;./ircbot&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[pidIter].port.c_str(),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[pidIter].<ref refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" kindref="member">server</ref>.c_str(),<sp/>NULL))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;execvp()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>not<sp/>show<sp/>this&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//parent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++pidIter;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae1a3968e7947464bee7714f6d43b7002" kindref="member">test</ref>(){</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a461d9a99c6ae082cad959027f2762081" kindref="member">getfile</ref>(</highlight><highlight class="stringliteral">&quot;Init_Datas.txt&quot;</highlight><highlight class="normal">,<sp/>text);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>counts<sp/>=<sp/>atoi(text.substr(text.find(</highlight><highlight class="stringliteral">&quot;counts=&quot;</highlight><highlight class="normal">)+7,<sp/>text.find(</highlight><highlight class="stringliteral">&quot;;&quot;</highlight><highlight class="normal">)-1).c_str());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kindref="member">pID</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>pid_t[counts];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="struct_ircbot" kindref="compound">myIrcbot</ref>[counts];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>text<sp/>=<sp/>text.substr(text.find(</highlight><highlight class="stringliteral">&quot;Bot&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>text.erase(text.find(</highlight><highlight class="stringliteral">&quot;ENDE&quot;</highlight><highlight class="normal">),<sp/>text.length());</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>user_vec;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>istringstream<sp/>is(text);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>getline(<sp/>is,<sp/>line<sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!line.empty())</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user_vec.push_back(<sp/>line<sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>user_vec.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(user_vec[i].find(</highlight><highlight class="stringliteral">&quot;Bot&quot;</highlight><highlight class="normal">)<sp/>!=<sp/>string::npos){</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++i;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pos=user_vec[i].find(</highlight><highlight class="stringliteral">&quot;Name:&quot;</highlight><highlight class="normal">))<sp/>!=<sp/>string::npos){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" kindref="member">name</ref><sp/>=<sp/>user_vec[i].substr(pos+5);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++i;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pos=user_vec[i].find(</highlight><highlight class="stringliteral">&quot;port:&quot;</highlight><highlight class="normal">))<sp/>!=<sp/>string::npos){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" kindref="member">port</ref><sp/>=<sp/>user_vec[i].substr(pos+5);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++i;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pos=user_vec[i].find(</highlight><highlight class="stringliteral">&quot;server:&quot;</highlight><highlight class="normal">))<sp/>!=<sp/>string::npos){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" kindref="member">server</ref><sp/>=<sp/>user_vec[i].substr(pos+7);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++i;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pos=user_vec[i].find(</highlight><highlight class="stringliteral">&quot;channel:&quot;</highlight><highlight class="normal">))<sp/>!=<sp/>string::npos){</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" kindref="member">channel</ref><sp/>=<sp/>user_vec[i].substr(pos+8);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" kindref="member">name</ref>.erase(</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].name.begin(),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" kindref="member">name</ref>.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].name.end());</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" kindref="member">port</ref>.erase(</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].port.begin(),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" kindref="member">port</ref>.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].port.end());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" kindref="member">server</ref>.erase(</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].server.begin(),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" kindref="member">server</ref>.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].server.end());</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" kindref="member">channel</ref>.erase(</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].channel.begin(),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].<ref refid="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" kindref="member">channel</ref>.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),<sp/><ref refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kindref="member">bot</ref>[iBot].channel.end());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++iBot;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="main_8cpp_1a461d9a99c6ae082cad959027f2762081" kindref="member">getfile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>filename,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>buffer)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>in(filename.c_str(),<sp/>ios_base::binary<sp/>|<sp/>ios_base::ate);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>in.exceptions(ios_base::badbit<sp/>|<sp/>ios_base::failbit<sp/>|<sp/>ios_base::eofbit);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer.resize(in.tellg());</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>in.seekg(0,<sp/>ios_base::beg);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>in.read(&amp;buffer[0],<sp/>buffer.size());</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buffer;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/main.cpp"/>
+  </compounddef>
+</doxygen>

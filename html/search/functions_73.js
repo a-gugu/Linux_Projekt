@@ -7,5 +7,6 @@ var searchData=
   ['sql_5fdelete',['sql_delete',['../irc__sqlite3_8cpp.html#a2f849d1f36c9b89b7967f3e6aa165729',1,'sql_delete():&#160;irc_sqlite3.cpp'],['../irc__sqlite3_8h.html#a2f849d1f36c9b89b7967f3e6aa165729',1,'sql_delete():&#160;irc_sqlite3.cpp']]],
   ['sql_5fgetchat',['sql_getchat',['../irc__sqlite3_8cpp.html#a689b4867818aa5da2d9150a40590d1ce',1,'sql_getchat():&#160;irc_sqlite3.cpp'],['../irc__sqlite3_8h.html#a689b4867818aa5da2d9150a40590d1ce',1,'sql_getchat():&#160;irc_sqlite3.cpp']]],
   ['sql_5finit',['sql_init',['../irc__sqlite3_8cpp.html#a400ae178216b9a003dc73de7d6a9ab32',1,'sql_init():&#160;irc_sqlite3.cpp'],['../irc__sqlite3_8h.html#a400ae178216b9a003dc73de7d6a9ab32',1,'sql_init():&#160;irc_sqlite3.cpp']]],
-  ['sql_5flastseen',['sql_lastseen',['../irc__sqlite3_8cpp.html#a20c2b00eee4d1371897ed3112172573c',1,'sql_lastseen(const char name[]):&#160;irc_sqlite3.cpp'],['../irc__sqlite3_8h.html#a20c2b00eee4d1371897ed3112172573c',1,'sql_lastseen(const char name[]):&#160;irc_sqlite3.cpp']]]
+  ['sql_5flastseen',['sql_lastseen',['../irc__sqlite3_8cpp.html#a20c2b00eee4d1371897ed3112172573c',1,'sql_lastseen(const char name[]):&#160;irc_sqlite3.cpp'],['../irc__sqlite3_8h.html#a20c2b00eee4d1371897ed3112172573c',1,'sql_lastseen(const char name[]):&#160;irc_sqlite3.cpp']]],
+  ['start_5fdaemon',['start_daemon',['../daemon_8cpp.html#a0015ad7506f07fbd45b1a3037ee4dc3e',1,'daemon.cpp']]]
 ];

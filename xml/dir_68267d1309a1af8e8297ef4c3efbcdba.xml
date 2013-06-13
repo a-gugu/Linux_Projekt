@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="daemon_8cpp">daemon.cpp</innerfile>
+    <innerfile refid="irc__func_8cpp">irc_func.cpp</innerfile>
+    <innerfile refid="irc__func_8h">irc_func.h</innerfile>
+    <innerfile refid="irc__sqlite3_8cpp">irc_sqlite3.cpp</innerfile>
+    <innerfile refid="irc__sqlite3_8h">irc_sqlite3.h</innerfile>
+    <innerfile refid="ircbot_8cpp">ircbot.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/"/>
+  </compounddef>
+</doxygen>

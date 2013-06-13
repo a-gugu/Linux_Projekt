@@ -1,4 +1,4 @@
-.TH "src/irc_sqlite3.cpp" 3 "Mon Jun 3 2013" "IRCBot" \" -*- nroff -*-
+.TH "src/irc_sqlite3.cpp" 3 "Wed Jun 12 2013" "Version 0.1" "IRC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -54,10 +54,10 @@ src/irc_sqlite3.cpp \-
 .RI "void \fBsql_addchat\fP (const char name[], const char channel[], const char chat[], const char date[])"
 .br
 .ti -1c
-.RI "void \fBsql_lastseen\fP (const char name[])"
+.RI "std::string \fBsql_lastseen\fP (const char name[])"
 .br
 .ti -1c
-.RI "void \fBsql_getchat\fP ()"
+.RI "std::string \fBsql_getchat\fP ()"
 .br
 .in -1c
 .SS "Variables"
@@ -71,48 +71,28 @@ src/irc_sqlite3.cpp \-
 .PP 
 .SS "#define irc_sqlite3_cpp__"
 
-.PP
-Definition at line 2 of file irc_sqlite3\&.cpp\&.
 .SS "#define sqlite3Path   'log\&.sqlite3'"
 
-.PP
-Definition at line 18 of file irc_sqlite3\&.cpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "void sql_addchat (const charname[], const charchannel[], const charchat[], const chardate[])"
 
-.PP
-Definition at line 48 of file irc_sqlite3\&.cpp\&.
 .SS "void sql_close ()"
 
-.PP
-Definition at line 33 of file irc_sqlite3\&.cpp\&.
 .SS "void sql_createtables ()"
 
-.PP
-Definition at line 38 of file irc_sqlite3\&.cpp\&.
 .SS "void sql_delete ()"
 
-.PP
-Definition at line 43 of file irc_sqlite3\&.cpp\&.
-.SS "void sql_getchat ()"
+.SS "std::string sql_getchat ()"
 
-.PP
-Definition at line 73 of file irc_sqlite3\&.cpp\&.
 .SS "void sql_init ()"
 
-.PP
-Definition at line 25 of file irc_sqlite3\&.cpp\&.
-.SS "void sql_lastseen (const charname[])"
+.SS "std::string sql_lastseen (const charname[])"
 
-.PP
-Definition at line 55 of file irc_sqlite3\&.cpp\&.
 .SH "Variable Documentation"
 .PP 
 .SS "sqlite3* sqlitedb = NULL"
 
-.PP
-Definition at line 21 of file irc_sqlite3\&.cpp\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for IRCBot from the source code\&.
+Generated automatically by Doxygen for IRC from the source code\&.

@@ -23,8 +23,8 @@ sqlite3 *sqlitedb = NULL;
 
 //Initialize the database if not exist
 void sql_init(){
-	if(sqlite3_open(sqlite3Path, &sqlitedb) != 0)	
-		std::cout << "sql_init() :: sqlite3_open()";
+	
+	sqlite3_open(sqlite3Path, &sqlitedb);
 	
 	sql_createtables();
 }

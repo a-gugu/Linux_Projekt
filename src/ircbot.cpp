@@ -24,8 +24,9 @@
 
 int main(int argc, char *argv[]){
 	
-	if (argc < 2) {
-        fprintf(stderr,"To less arguments\n");
+	if (argc < 4) {
+		
+		fprintf(stderr,"To less arguments\n");
         exit(1);
     }
 	
@@ -34,7 +35,7 @@ int main(int argc, char *argv[]){
 	irc_connect(atoi(argv[1]),argv[2]);
 	
 	//Set identify for irc server connection
-	irc_identify();
+	irc_identify(argv[3],argv[4]);
 	
 	//Init the sqlite3 database for loggin
 	sql_init();

@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="irc__func_8h" kind="file">
+    <compoundname>irc_func.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="irc__func_8cpp" local="yes">src/irc_func.cpp</includedby>
+    <includedby refid="ircbot_8cpp" local="yes">src/ircbot.cpp</includedby>
+    <incdepgraph>
+      <node id="27">
+        <label>src/irc_func.h</label>
+        <link refid="irc_func.h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="29">
+        <label>src/irc_func.h</label>
+        <link refid="irc_func.h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>src/ircbot.cpp</label>
+        <link refid="ircbot_8cpp"/>
+      </node>
+      <node id="30">
+        <label>src/irc_func.cpp</label>
+        <link refid="irc__func_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="irc__func_8h_1ac188bf3edc78d069da8bdf58a6d8364a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void irc_connect</definition>
+        <argsstring>(int port, char *host)</argsstring>
+        <name>irc_connect</name>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>host</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="9" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.cpp" bodystart="61" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1abb028a46ea1d1f86b82a58bc1ca262a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void irc_disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>irc_disconnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="10" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.cpp" bodystart="105" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1aa96b2951f6b3082fff4065850a569dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void irc_identify</definition>
+        <argsstring>()</argsstring>
+        <name>irc_identify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="11" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.cpp" bodystart="117" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1a28e767bec8d78064ec57b82502eee409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void irc_parse</definition>
+        <argsstring>(std::string buffer)</argsstring>
+        <name>irc_parse</name>
+        <param>
+          <type>std::string</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1a9c0fe5eddd2dea19f69cf1617c23529f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void irc_receive</definition>
+        <argsstring>()</argsstring>
+        <name>irc_receive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="13" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.cpp" bodystart="132" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1a4201cef228d3a7e8b462df39a9226d9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void s2u</definition>
+        <argsstring>(const char *msg)</argsstring>
+        <name>s2u</name>
+        <param>
+          <type>const char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="15" column="1" bodyfile="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.cpp" bodystart="281" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1a7617b245fff9f8e589a179df7b32028c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ping_parse</definition>
+        <argsstring>(const std::string &amp;buffer)</argsstring>
+        <name>ping_parse</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="irc__func_8h_1afe12e497e5945427ab6ae35a44608a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bot_functions</definition>
+        <argsstring>(const std::string &amp;buffer)</argsstring>
+        <name>bot_functions</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>irc_func_h__</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>irc_func_h__</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>IRC<sp/>and<sp/>received,<sp/>parse<sp/>and<sp/>send<sp/>functions<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1ac188bf3edc78d069da8bdf58a6d8364a" kindref="member">irc_connect</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>host);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1abb028a46ea1d1f86b82a58bc1ca262a6" kindref="member">irc_disconnect</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1aa96b2951f6b3082fff4065850a569dae" kindref="member">irc_identify</ref>();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1a6ed587c61178f079e8d3a9517a60c433" kindref="member">irc_parse</ref>(std::string<sp/>buffer);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1a9c0fe5eddd2dea19f69cf1617c23529f" kindref="member">irc_receive</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1a4201cef228d3a7e8b462df39a9226d9d" kindref="member">s2u</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1aeb77f385d8c971bee76e19f9359d4273" kindref="member">ping_parse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;buffer);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="irc__func_8cpp_1ad50ebbf021dc41d5db41f2813a55bd7a" kindref="member">bot_functions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;buffer);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/alexandergugu/Desktop/HahnProjekt/Linux_Projekt/src/irc_func.h"/>
+  </compounddef>
+</doxygen>

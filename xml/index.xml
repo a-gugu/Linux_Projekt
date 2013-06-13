@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.4">
+  <compound refid="struct___identify" kind="struct"><name>_Identify</name>
+    <member refid="struct___identify_1afff56847990bb0060e6f873c6fc86269" kind="variable"><name>NICK</name></member>
+    <member refid="struct___identify_1aa6395f28f2c69810b1f8566cfd3bfed5" kind="variable"><name>USER</name></member>
+    <member refid="struct___identify_1ac46deb76f08efd08c89da3626241aeff" kind="variable"><name>NickServ</name></member>
+    <member refid="struct___identify_1a2c49bcc8291e16bdcb6166fe56a5091c" kind="variable"><name>JOIN</name></member>
+    <member refid="struct___identify_1a8d2d58c6c11195d5c2debf9f427c3f35" kind="function"><name>_Identify</name></member>
+  </compound>
+  <compound refid="struct_ircbot" kind="struct"><name>Ircbot</name>
+    <member refid="struct_ircbot_1a578e1b551365a0cfae1988a08cd44338" kind="variable"><name>name</name></member>
+    <member refid="struct_ircbot_1a1792738fa95166d28cbb44e6e2b4b02a" kind="variable"><name>port</name></member>
+    <member refid="struct_ircbot_1a0a4c331476d0cfc4450626ae053432f7" kind="variable"><name>server</name></member>
+    <member refid="struct_ircbot_1ac0b9a9e243989a264d5a4a0a09457be1" kind="variable"><name>channel</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="daemon_8cpp" kind="file"><name>daemon.cpp</name>
+    <member refid="daemon_8cpp_1ac04ce74109b413ea192c41d9aa8e5126" kind="define"><name>CHILD</name></member>
+    <member refid="daemon_8cpp_1a8fe83ac76edc595f6b98cd4a4127aed5" kind="define"><name>ERROR</name></member>
+    <member refid="daemon_8cpp_1a0015ad7506f07fbd45b1a3037ee4dc3e" kind="function"><name>start_daemon</name></member>
+    <member refid="daemon_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="irc__func_8cpp" kind="file"><name>irc_func.cpp</name>
+    <member refid="irc__func_8cpp_1adf1652123c7f9f57fdd776e3c276a13b" kind="define"><name>irc_func_cpp__</name></member>
+    <member refid="irc__func_8cpp_1a842ed03f27719bc87666bfd1f75415b8" kind="define"><name>MAX_LINE</name></member>
+    <member refid="irc__func_8cpp_1ad2c8fb3df3a737e0685e902870a611d2" kind="variable"><name>sockfd</name></member>
+    <member refid="irc__func_8cpp_1a8c245d4459a80f3ddf1363167e50348c" kind="variable"><name>Identify</name></member>
+    <member refid="irc__func_8cpp_1a4ce1e21a893fd05e4b73f6ad00b4e832" kind="variable"><name>saveLog</name></member>
+    <member refid="irc__func_8cpp_1ac188bf3edc78d069da8bdf58a6d8364a" kind="function"><name>irc_connect</name></member>
+    <member refid="irc__func_8cpp_1abb028a46ea1d1f86b82a58bc1ca262a6" kind="function"><name>irc_disconnect</name></member>
+    <member refid="irc__func_8cpp_1aa96b2951f6b3082fff4065850a569dae" kind="function"><name>irc_identify</name></member>
+    <member refid="irc__func_8cpp_1a9c0fe5eddd2dea19f69cf1617c23529f" kind="function"><name>irc_receive</name></member>
+    <member refid="irc__func_8cpp_1aeb77f385d8c971bee76e19f9359d4273" kind="function"><name>ping_parse</name></member>
+    <member refid="irc__func_8cpp_1ad50ebbf021dc41d5db41f2813a55bd7a" kind="function"><name>bot_functions</name></member>
+    <member refid="irc__func_8cpp_1a4201cef228d3a7e8b462df39a9226d9d" kind="function"><name>s2u</name></member>
+    <member refid="irc__func_8cpp_1a6ed587c61178f079e8d3a9517a60c433" kind="function"><name>irc_parse</name></member>
+  </compound>
+  <compound refid="irc__func_8h" kind="file"><name>irc_func.h</name>
+    <member refid="irc__func_8h_1ac188bf3edc78d069da8bdf58a6d8364a" kind="function"><name>irc_connect</name></member>
+    <member refid="irc__func_8h_1abb028a46ea1d1f86b82a58bc1ca262a6" kind="function"><name>irc_disconnect</name></member>
+    <member refid="irc__func_8h_1aa96b2951f6b3082fff4065850a569dae" kind="function"><name>irc_identify</name></member>
+    <member refid="irc__func_8h_1a28e767bec8d78064ec57b82502eee409" kind="function"><name>irc_parse</name></member>
+    <member refid="irc__func_8h_1a9c0fe5eddd2dea19f69cf1617c23529f" kind="function"><name>irc_receive</name></member>
+    <member refid="irc__func_8h_1a4201cef228d3a7e8b462df39a9226d9d" kind="function"><name>s2u</name></member>
+    <member refid="irc__func_8h_1a7617b245fff9f8e589a179df7b32028c" kind="function"><name>ping_parse</name></member>
+    <member refid="irc__func_8h_1afe12e497e5945427ab6ae35a44608a96" kind="function"><name>bot_functions</name></member>
+  </compound>
+  <compound refid="irc__sqlite3_8cpp" kind="file"><name>irc_sqlite3.cpp</name>
+    <member refid="irc__sqlite3_8cpp_1a196b2e99901c1fdc17075d81c5fa5b68" kind="define"><name>irc_sqlite3_cpp__</name></member>
+    <member refid="irc__sqlite3_8cpp_1a91c0edd7fae1f28911fc16e220e32404" kind="define"><name>sqlite3Path</name></member>
+    <member refid="irc__sqlite3_8cpp_1acfdcfca51665de8a634cbb451c2acacc" kind="variable"><name>sqlitedb</name></member>
+    <member refid="irc__sqlite3_8cpp_1a400ae178216b9a003dc73de7d6a9ab32" kind="function"><name>sql_init</name></member>
+    <member refid="irc__sqlite3_8cpp_1a84f3338c7173b819673e9df5bba3438f" kind="function"><name>sql_close</name></member>
+    <member refid="irc__sqlite3_8cpp_1a659dc86fd74bbb9fe69e388feff44d9f" kind="function"><name>sql_createtables</name></member>
+    <member refid="irc__sqlite3_8cpp_1a2f849d1f36c9b89b7967f3e6aa165729" kind="function"><name>sql_delete</name></member>
+    <member refid="irc__sqlite3_8cpp_1aedb149cb818b4199c309d5c07484a84c" kind="function"><name>sql_addchat</name></member>
+    <member refid="irc__sqlite3_8cpp_1a20c2b00eee4d1371897ed3112172573c" kind="function"><name>sql_lastseen</name></member>
+    <member refid="irc__sqlite3_8cpp_1a689b4867818aa5da2d9150a40590d1ce" kind="function"><name>sql_getchat</name></member>
+  </compound>
+  <compound refid="irc__sqlite3_8h" kind="file"><name>irc_sqlite3.h</name>
+    <member refid="irc__sqlite3_8h_1a400ae178216b9a003dc73de7d6a9ab32" kind="function"><name>sql_init</name></member>
+    <member refid="irc__sqlite3_8h_1a84f3338c7173b819673e9df5bba3438f" kind="function"><name>sql_close</name></member>
+    <member refid="irc__sqlite3_8h_1a659dc86fd74bbb9fe69e388feff44d9f" kind="function"><name>sql_createtables</name></member>
+    <member refid="irc__sqlite3_8h_1a2f849d1f36c9b89b7967f3e6aa165729" kind="function"><name>sql_delete</name></member>
+    <member refid="irc__sqlite3_8h_1aedb149cb818b4199c309d5c07484a84c" kind="function"><name>sql_addchat</name></member>
+    <member refid="irc__sqlite3_8h_1a20c2b00eee4d1371897ed3112172573c" kind="function"><name>sql_lastseen</name></member>
+    <member refid="irc__sqlite3_8h_1a689b4867818aa5da2d9150a40590d1ce" kind="function"><name>sql_getchat</name></member>
+  </compound>
+  <compound refid="ircbot_8cpp" kind="file"><name>ircbot.cpp</name>
+    <member refid="ircbot_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ace47a89c1a05a70e2939de4b18624209" kind="typedef"><name>myIrcbot</name></member>
+    <member refid="main_8cpp_1af0b107767967f2e132f7d38006543421" kind="variable"><name>bot</name></member>
+    <member refid="main_8cpp_1adb3f627ecdb73520e9d65d278faa6bef" kind="variable"><name>pID</name></member>
+    <member refid="main_8cpp_1a461d9a99c6ae082cad959027f2762081" kind="function"><name>getfile</name></member>
+    <member refid="main_8cpp_1ae1a3968e7947464bee7714f6d43b7002" kind="function"><name>test</name></member>
+    <member refid="main_8cpp_1a5aaf9a984640187672522d0ca12440ff" kind="function"><name>filldatas</name></member>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>
