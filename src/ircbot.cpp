@@ -6,18 +6,17 @@
 #include "irc_sqlite3.h"
 #include "irc_func.h"
 /*
- *This irc bot setup the connection with a given address 
- *	works on >irc.europa-irc.de 6667<
- *	create a sqlite3 database to save and query logs
- 
- *	default name of this bot:: Frosch87
- 
+ *This irc bot setup the connection with a given address in Init_Datas.txt
+ *	examples are given there
+	
  *-->function to use
  
  *		print			<== to output the database
  *		savestart		<== to start the loggin
  *		savestop		<== to stop the loggin
  *		lastseen [name]	<== take the name and output the newest date and message
+ *		join [channel]	<== take the channel and join
+ *		leave [channel]	<== take the channel and part channel
  *		delete			<== delete the sqlite3 database file
  *		Botname: xxx	<== output a simple message
  *		name [name]		<== change the nick to argument in brackets

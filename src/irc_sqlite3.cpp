@@ -72,6 +72,7 @@ std::string sql_lastseen(const char name[]){
 	
 	return ss.str();
 }
+
 //Output the log to uplink
 std::string sql_getchat(){
 	sqlite3_stmt *vm;

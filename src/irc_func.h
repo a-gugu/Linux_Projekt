@@ -1,7 +1,7 @@
 #ifndef irc_func_h__
 #define irc_func_h__
 
-/*	IRC and received, parse and send functions	 */
+/*	IRC functions	 */
 
 #include <string>
 

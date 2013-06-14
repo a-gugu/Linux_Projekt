@@ -15,9 +15,9 @@ typedef struct Ircbot {
 	string port;
 	string server;
 	string channel;
-}myIrcbot;
+};
 
-myIrcbot *bot;
+Ircbot *bot;
 pid_t *pID;//Defines max bot process now 10
 
 string& getfile(const string& filename, string& buffer);
@@ -32,6 +32,8 @@ int main(){
 	
 	filldatas();
 	
+	//Create processes on counts and start the bot step by step
+	//Bots are demons and this program close after init them
 	while (pidIter < (sizeof(pID)/sizeof(pID[0]))) {
 		
 		
@@ -43,7 +45,6 @@ int main(){
 		}
 		else if(pID[pidIter] == 0){
 			//Child call the bot application
-			umask(0);
 			if(execlp ("./ircbot", "./ircbot", bot[pidIter].port.c_str(), bot[pidIter].server.c_str(), bot[pidIter].name.c_str(), bot[pidIter].channel.c_str(), NULL))
 				perror("execvp()");
 			
@@ -62,30 +63,32 @@ int main(){
 
 void filldatas(){
 	
-	
+	//Parse file to get Bot datas and fill  
 	string text;
 	getfile("Init_Datas.txt", text);
     
+	//Get number of Bots to be startet{bots number is equal to processes number}
 	unsigned int counts = atoi(text.substr(text.find("counts=")+7, text.find(";")-1).c_str());
 	
 	pID = new pid_t[counts];
 	
-	bot = new myIrcbot[counts];
+	bot = new Ircbot[counts];
 	
+	//Delete unnecessary information in text
 	text = text.substr(text.find("Bot"));
 	
 	text.erase(text.find("ENDE"), text.length());
 	
 	string line;
     vector<string> user_vec;
-	
+	//push every line in a vector for easy parsing
 	istringstream is(text);
 	while( getline( is, line ) ) {
 		if (!line.empty())
 			user_vec.push_back( line );
     }
 	
-	
+	//Parse and fill bots
 	int iBot = 0;
 	for (unsigned int i = 0; i < user_vec.size(); i++) {
 		
@@ -125,18 +128,8 @@ void filldatas(){
 	}
 	
 }
-
-/*
-
-	s.erase(0, s.find_first_not_of(" "));
-
-	str.erase(str.find_last_not_of(" ")+1);
-
-	transform(str.begin(), str.end(), str.begin(), ::tolower);
-    
-*/
 	
-
+//Get Bot configur as whole text
 string& getfile(const string& filename, string& buffer) {
     
 	ifstream in(filename.c_str(), ios_base::binary | ios_base::ate);
