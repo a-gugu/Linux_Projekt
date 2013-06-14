@@ -1,11 +1,5 @@
 IRCBOT:
-counts=3;
-
-Bot
-	Name: Franky
-	port: 6669
-	server: uk.demon.quakenet.org 
-	channel: #Franky
+counts=2;
 
 Bot
  	Name: Frosch1999
