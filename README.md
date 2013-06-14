@@ -14,8 +14,8 @@ This program load from "/src/Init_Datas.rtf" bot counts and their params.</br> T
 ###OPTIONS
 	
 ###BUGS
-	If you read "Should not show this" then the demon failed. </br>  
+	If you read "Should not show this" then the demon failed. 
         Look in "Init_Datas.rtf" to be correct.
 
 #####AUTHOR
-	Alexander Gugu m1001243.fh-heidelberg.de <br />
+	Alexander Gugu m1001243.fh-heidelberg.de 
