@@ -7,7 +7,7 @@ SYNOPSIS
 	ircbot port server name channel
 
 DESCRIPTION
-
+# This is an H1 #
 This bot start a socket client connection on port and 
 server params and then identify with name and channel. 
 If the server try to change you nick by its own then the bot will force it back. 
