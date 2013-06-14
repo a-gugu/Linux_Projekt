@@ -26,6 +26,8 @@
 
 using namespace std;
 
+
+
 int main(int argc, char *argv[]){
 	
 	if (argc < 4) {
@@ -33,7 +35,7 @@ int main(int argc, char *argv[]){
 		fprintf(stderr,"To less arguments\n");
         exit(1);
     }
-	
+
 
 	//Create a given connection
 	irc_connect(atoi(argv[1]),argv[2]);

@@ -65,7 +65,7 @@ void filldatas(){
 	
 	//Parse file to get Bot datas and fill  
 	string text;
-	getfile("Init_Datas.txt", text);
+	getfile("Init_Datas.rtf", text);
     
 	//Get number of Bots to be startet{bots number is equal to processes number}
 	unsigned int counts = atoi(text.substr(text.find("counts=")+7, text.find(";")-1).c_str());
@@ -84,8 +84,14 @@ void filldatas(){
 	//push every line in a vector for easy parsing
 	istringstream is(text);
 	while( getline( is, line ) ) {
-		if (!line.empty())
-			user_vec.push_back( line );
+		if (line.empty())
+			continue;
+			
+		if (line.find("\\")) {
+			line.erase(line.find("\\"));
+		}
+		
+		user_vec.push_back( line );
     }
 	
 	//Parse and fill bots

@@ -2,10 +2,10 @@ IRCBOT:
 counts=2;
 
 Bot
- 	Name: Frosch1999
- 	port: 6667
+ 	Name: HansSarpei
+ 	port: 6669
  	server: irc.wikkedwire.com
- 	channel: #Frosch1999
+ 	channel: #HansSarpei
  
 Bot
  	Name: HansSarpei
