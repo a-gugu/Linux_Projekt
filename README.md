@@ -1,39 +1,21 @@
-IRC Bot
 
-	ircbot - IRC Bot connect to a IRC server
+##Creator
 
-SYNOPSIS
+	creator - create process and start the bots
 
-	ircbot port server name channel
+##SYNOPSIS
 
-DESCRIPTION
-# This is an H1 #
-This bot start a socket client connection on port and 
-server params and then identify with name and channel. 
-If the server try to change you nick by its own then the bot will force it back. 
-The bot works with following messages: 	
-		print		<== to output the database
- 		savestart	<== to start the loggin
- 		savestop	<== to stop the loggin
- 		lastseen [name]	<== take the name and output the newest date and message
- 		join [channel]	<== take the channel and join
- 		leave [channel]	<== take the channel and part channel
- 		delete		<== delete the sqlite3 database file
- 		Botname: xxx	<== output a simple message
- 		name [name]	<== change the nick to argument in brackets
- 		exit		<== off the irc bot
+	creator
 
-The bot save log in a sqlite3 database called > chat < filename: log.sqlite3
+##DESCRIPTION
 
- 
-OPTIONS
+This program load from "/src/Init_Datas.rtf" bot counts and their params.</br> Then it create a process and start bots as demons. </br> For modifying change datas and count(every Bot is one) in file and run again.<br />
+
+###OPTIONS
 	
-BUGS
-	Bugs came sometimes with exceptions like string out of range. 
-	Possible solution check if database is open.
+###BUGS
+	If you read "Should not show this" then the demon failed. </br>  
+        Look in "Init_Datas.rtf" to be correct.
 
-AUTHOR
-	Alexander Guru m1001243.fh-heidelberg.de
-
-
-
+#####AUTHOR
+	Alexander Gugu m1001243.fh-heidelberg.de <br />
