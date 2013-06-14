@@ -22,7 +22,7 @@ clean:
 	cd ./src ; make clean
 
 install:
-	@if [ ! -d $(CHECKDIR) ]; \
+	@if [ ! -f $(CHECKDIR) ]; \
 		then \
 		mkdir tmp; \
 		cd tmp; \
@@ -31,7 +31,7 @@ install:
 		./sqlite-autoconfig-307100/configure; \
 		sudo make install; \
 		cd..;\
-		sudo rm -r tmp;\
+		sudo rm tmp;\
 		echo "install SQLITE3 in $(CHECKDIR)"; \
 	else \
 		echo "SQLITE3 is already install";\

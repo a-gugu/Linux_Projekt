@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <cstdlib>
+#include <fstream>
+
 
 #include "irc_sqlite3.h"
 #include "irc_func.h"
@@ -22,6 +24,9 @@
  *		exit			<== off the irc bot
  */		
 
+
+using namespace std;
+
 int main(int argc, char *argv[]){
 	
 	if (argc < 4) {
@@ -30,12 +35,18 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 	
-	
+
 	//Create a given connection
 	irc_connect(atoi(argv[1]),argv[2]);
 	
 	//Set identify for irc server connection
 	irc_identify(argv[3],argv[4]);
+	
+	ofstream f;
+	f.open ("Bot_Connect.txt",std::ofstream::out | std::ofstream::app);
+	f << argv[1] << endl << argv[2] << endl << endl;
+	f.close();
+	
 	
 	//Init the sqlite3 database for loggin
 	sql_init();

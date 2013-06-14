@@ -51,7 +51,7 @@ void sql_addchat(const char name[],const char channel[],const char chat[], const
 	sqlite3_exec(sqlitedb, tmp, NULL, NULL, NULL);
 }
 
-//Query by name and return the last input
+//Query by name and output  to uplink
 std::string sql_lastseen(const char name[]){
 	
 	sqlite3_stmt *vm;
@@ -79,13 +79,13 @@ std::string sql_getchat(){
 		sql_createtables();
 	
 	std::stringstream ss;
-	
+
 	while (sqlite3_step(vm) != SQLITE_DONE)
 	{
 		ss	<< (char*)sqlite3_column_text(vm, 1) << " "
-		//<< (char*)sqlite3_column_text(vm, 2) << " "
-		<< (char*)sqlite3_column_text(vm, 3) << " "
-		<< (char*)sqlite3_column_text(vm, 4) << "$";
+			<< (char*)sqlite3_column_text(vm, 2) << " "
+			<< (char*)sqlite3_column_text(vm, 3) << " "
+			<< (char*)sqlite3_column_text(vm, 4) << " $ ";
 	}
 	
 	sqlite3_finalize(vm);

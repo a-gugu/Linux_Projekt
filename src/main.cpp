@@ -6,6 +6,7 @@
 #include <cstring>
 #include <vector>
 #include <sstream>
+#include <sys/stat.h>
 
 using namespace std;
 
@@ -42,7 +43,7 @@ int main(){
 		}
 		else if(pID[pidIter] == 0){
 			//Child call the bot application
-			
+			umask(0);
 			if(execlp ("./ircbot", "./ircbot", bot[pidIter].port.c_str(), bot[pidIter].server.c_str(), bot[pidIter].name.c_str(), bot[pidIter].channel.c_str(), NULL))
 				perror("execvp()");
 			
